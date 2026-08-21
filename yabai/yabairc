@@ -1,3 +1,23 @@
+yabai -m space 1 --label main
+yabai -m space 2 --label terminal
+yabai -m space 3 --label chat
+yabai -m space 4 --label music
+
+# main
+yabai -m rule --add app="^Safari$" space=main
+
+# terminal 
+yabai -m rule --add app="^Terminal$" space=terminal
+
+# chat
+yabai -m rule --add app="^Mail$" space=chat
+yabai -m rule --add app="^Discord$" space=chat
+yabai -m rule --add app="^Messages$" space=chat
+yabai -m rule --add app="^WhatsApp$" space=chat
+
+# music
+yabai -m rule --add app="^Music$" space=music
+
 yabai -m config layout bsp
 
 yabai -m config window_placement second_child
