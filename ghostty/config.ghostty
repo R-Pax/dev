@@ -1,0 +1,5 @@
+background-image = ~/Documents/dev/ghostty/agame.png
+background-image-fit = cover
+background-image-position = center
+
+font-size = 42
