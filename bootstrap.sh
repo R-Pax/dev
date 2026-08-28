@@ -23,6 +23,8 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
+killall dock killall Finder     
+
 # -------------- brew --------------
 
 if ! command -v brew &>/dev/null; then
