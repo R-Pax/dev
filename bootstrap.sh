@@ -9,12 +9,19 @@ CONFIGS=(
     "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
 )
 
-
 for entry in "${CONFIGS[@]}"; do
   src="${entry%%:*}"
   dest="${entry##*:}"
   mkdir -p "$(dirname "$dest")"
   ln -sf "$DOTFILES_DIR/$src" "$dest"
+
+  if [ -L "$dest" ]; then
+    echo "OK   $dest -> $(readlink "$dest")"
+  elif [ -e "$dest" ]; then
+    echo "! $dest exists but is NOT a symlink"
+  else
+    echo "ERROR $dest does not exist"
+fi
 done
 
 # -------------- macOS --------------
