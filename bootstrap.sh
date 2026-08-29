@@ -3,6 +3,20 @@
 # quit on error
 set -e 
 
+CONFIGS=(
+    "zsh/.zshrc:$HOME/.zshrc"
+    "yabai/yabairc:$HOME/.yabairc"
+    "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+)
+
+
+for entry in "${CONFIGS[@]}"; do
+  src="${entry%%:*}"
+  dest="${entry##*:}"
+  mkdir -p "$(dirname "$dest")"
+  ln -sf "$DOTFILES_DIR/$src" "$dest"
+done
+
 # -------------- macOS --------------
 
 # dark mode
