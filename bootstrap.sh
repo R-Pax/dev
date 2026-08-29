@@ -37,4 +37,6 @@ fi
 
 brew update
 
+brew trust --formula koekeishiya/formulae/yabai
+
 brew bundle --file=Brewfile

@@ -1,5 +1,5 @@
-brew "nvim"
+brew "nvim", trusted: true
 brew "koekeishiya/formulae/yabai"
-cask "Ghostty"
+cask "Ghostty", trusted: true
 
 
