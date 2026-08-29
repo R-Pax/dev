@@ -47,6 +47,23 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
 
+# Menu bar
+defaults write NSGlobalDomain AppleMenuBarFontSize -string large
+echo "Big menu bar"
+
+# Mouse
+defaults write NSGlobalDomain com.apple.mouse.linear -int 1
+defaults write NSGlobalDomain com.apple.mouse.scaling -float 0.5
+echo "Set up mouse"
+
+# Sounds
+defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
+
+# Folders
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
+echo "Spring loaded folder settings"
+
 killall Dock Finder     
 
 # -------------- brew --------------
