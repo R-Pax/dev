@@ -10,11 +10,11 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 echo "Dark mode on"
 
 # dock permahide
-defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 1000 && killall Dock
+defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 1000 
 echo "Removed the dock"
 
 # square windows
-defaults write -g NSConvolutionOverride1 -float 0.1 && killall Finder
+defaults write -g NSConvolutionOverride1 -float 0.1 
 echo "Windows are now squared off"
 
 # no auto correct 
@@ -27,7 +27,7 @@ echo "Auto correct is off"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-killall dock killall Finder     
+killall Dock Finder     
 
 # -------------- brew --------------
 
