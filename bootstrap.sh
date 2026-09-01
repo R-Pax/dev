@@ -6,7 +6,7 @@ set -e
 CONFIGS=(
     "zsh/.zshrc:$HOME/.zshrc"
     "yabai/yabairc:$HOME/.yabairc"
-    "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+#   "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
 )
 
 # for entry in "${CONFIGS[@]}"; do
