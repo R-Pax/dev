@@ -8,6 +8,8 @@ CONFIGS=(
     "yabai/yabairc:$HOME/.yabairc"
     "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
     "nvim/:$HOME/.config/nvim"
+    "git/.gitconfig:$HOME/.gitconfig"
+    "git/.gitignore_global:$HOME/.gitignore_global" 
 )
 
 DOTFILES_DIR="${DOTFILES_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
