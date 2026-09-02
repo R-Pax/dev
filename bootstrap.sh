@@ -12,13 +12,16 @@ CONFIGS=(
     "git/.gitignore_global:$HOME/.gitignore_global" 
 )
 
-DOTFILES_DIR="${DOTFILES_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+WALLPAPER="$CURRENT_DIR/arch.png"
 
- for entry in "${CONFIGS[@]}"; do
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$WALLPAPER\""
+
+for entry in "${CONFIGS[@]}"; do
    src="${entry%%:*}"
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
-   ln -sf "$DOTFILES_DIR/$src" "$dest"
+   ln -sf "$CURRENT_DIR/$src" "$dest"
  
    if [ -L "$dest" ]; then
      echo "OK   $dest -> $(readlink "$dest")"
