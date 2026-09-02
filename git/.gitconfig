@@ -2,4 +2,9 @@
     excludesfile = ~/.gitignore_global
 [user]
 	name = R-Pax
-	email = pilots-coldest.8w@icloud.com
+    email = pilots-coldest.8w@icloud.com
+# better git log
+[log]
+    date = relative
+[format]
+    pretty = tformat:'%Cred%h%Creset - %C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
