@@ -2,7 +2,7 @@
     excludesfile = ~/.gitignore_global
 [user]
 	name = R-Pax
-    email = pilots-coldest.8w@icloud.com
+    email = git@mac.hm
 # better git log
 [log]
     date = relative
