@@ -7,7 +7,7 @@ CONFIGS=(
     "zsh/.zshrc:$HOME/.zshrc"
     "yabai/yabairc:$HOME/.yabairc"
     "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
-    "nvim/:$HOME/.config/nvim"
+    "nvim:$HOME/.config/nvim"
     "git/.gitconfig:$HOME/.gitconfig"
     "git/.gitignore_global:$HOME/.gitignore_global" 
 )
@@ -21,8 +21,13 @@ for entry in "${CONFIGS[@]}"; do
    src="${entry%%:*}"
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
+
+   if [ -e "$dest" ] || [ -L "$dest" ]; then
+        rm -rf "$dest"
+   fi
+
    ln -sf "$CURRENT_DIR/$src" "$dest"
- 
+
    if [ -L "$dest" ]; then
      echo "OK   $dest -> $(readlink "$dest")"
    elif [ -e "$dest" ]; then
