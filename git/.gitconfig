@@ -7,4 +7,4 @@
 [log]
     date = relative
 [format]
-    pretty = tformat:'%Cred%h%Creset - %C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+    pretty = tformat:'%Cred%h%Creset - %C(auto)%d%Creset %s %Cgreen(%ae %ad)%Creset'
