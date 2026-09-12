@@ -3,40 +3,6 @@
 # quit on error
 set -e 
 
-CONFIGS=(
-    "zsh/.zshrc:$HOME/.zshrc"
-    "yabai/yabairc:$HOME/.yabairc"
-    "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
-    "nvim:$HOME/.config/nvim"
-    "git/.gitconfig:$HOME/.gitconfig"
-    "git/.gitignore_global:$HOME/.gitignore_global" 
-)
-
-CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
-WALLPAPER="$CURRENT_DIR/arch.png"
-
-osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$WALLPAPER\""
-
-for entry in "${CONFIGS[@]}"; do
-   src="${entry%%:*}"
-   dest="${entry##*:}"
-   mkdir -p "$(dirname "$dest")"
-
-   if [ -e "$dest" ] || [ -L "$dest" ]; then
-        rm -rf "$dest"
-   fi
-
-   ln -sf "$CURRENT_DIR/$src" "$dest"
-
-   if [ -L "$dest" ]; then
-     echo "OK   $dest -> $(readlink "$dest")"
-   elif [ -e "$dest" ]; then
-     echo "! $dest exists but is NOT a symlink"
-   else
-     echo "ERROR $dest does not exist"
- fi
-done
-
 # -------------- macOS --------------
 
 # dark mode
@@ -111,3 +77,39 @@ brew update
 brew trust --formula koekeishiya/formulae/yabai
 
 brew bundle --file=Brewfile
+
+# -------------- Set up configs --------------
+
+CONFIGS=(
+    "zsh/.zshrc:$HOME/.zshrc"
+    "yabai/yabairc:$HOME/.yabairc"
+    "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+    "nvim:$HOME/.config/nvim"
+    "git/.gitconfig:$HOME/.gitconfig"
+    "git/.gitignore_global:$HOME/.gitignore_global" 
+)
+
+CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+WALLPAPER="$CURRENT_DIR/arch.png"
+
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$WALLPAPER\""
+
+for entry in "${CONFIGS[@]}"; do
+   src="${entry%%:*}"
+   dest="${entry##*:}"
+   mkdir -p "$(dirname "$dest")"
+
+   if [ -e "$dest" ] || [ -L "$dest" ]; then
+        rm -rf "$dest"
+   fi
+
+   ln -sf "$CURRENT_DIR/$src" "$dest"
+
+   if [ -L "$dest" ]; then
+     echo "OK   $dest -> $(readlink "$dest")"
+   elif [ -e "$dest" ]; then
+     echo "! $dest exists but is NOT a symlink"
+   else
+     echo "ERROR $dest does not exist"
+ fi
+done
