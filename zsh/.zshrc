@@ -9,6 +9,9 @@ precmd() {
   print -n "\e[8A"
 }
 
+# Prompt
+PROMPT='%n@  %1~ %# '
+
 # Git status rightprompt
 
 autoload -Uz vcs_info
