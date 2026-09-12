@@ -11,6 +11,7 @@ WALLPAPER="$CURRENT_DIR/arch.png"
 
 # set macOS wallpaper
 osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$WALLPAPER\""
+echo "Wallpaper" $WALLPAPER "set"
 
 # dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
