@@ -3,7 +3,14 @@
 # quit on error
 set -e 
 
+CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+
+WALLPAPER="$CURRENT_DIR/arch.png"
+
 # -------------- macOS --------------
+
+# set macOS wallpaper
+osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$WALLPAPER\""
 
 # dark mode
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
@@ -88,11 +95,6 @@ CONFIGS=(
     "git/.gitconfig:$HOME/.gitconfig"
     "git/.gitignore_global:$HOME/.gitignore_global" 
 )
-
-CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
-WALLPAPER="$CURRENT_DIR/arch.png"
-
-osascript -e "tell application \"System Events\" to tell every desktop to set picture to \"$WALLPAPER\""
 
 for entry in "${CONFIGS[@]}"; do
    src="${entry%%:*}"
