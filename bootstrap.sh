@@ -95,6 +95,7 @@ CONFIGS=(
     "nvim:$HOME/.config/nvim"
     "git/.gitconfig:$HOME/.gitconfig"
     "git/.gitignore_global:$HOME/.gitignore_global" 
+    "tmux/.tmux.conf:$HOME/.tmux.conf"
 )
 
 for entry in "${CONFIGS[@]}"; do

@@ -5,3 +5,7 @@ background-image-position = center
 window-decoration = none
         
 font-size = 42
+keybind = cmd+n=ignore
+keybind = cmd+n=text:\x02c
+keybind = cmd+w=text:\x02W
+keybind = cmd+k=text:clear\x0d
