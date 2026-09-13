@@ -5,7 +5,19 @@ background-image-position = center
 window-decoration = none
         
 font-size = 42
+
+# tmux
+
 keybind = cmd+n=ignore
+keybind = cmd+t=ignore
+
 keybind = cmd+n=text:\x02c
+keybind = cmd+t=text:\x02c
 keybind = cmd+w=text:\x02W
+
 keybind = cmd+k=text:clear\x0d
+
+# tmux next/previous window
+
+keybind = ctrl+tab=text:\x02n
+keybind = ctrl+shift+tab=text:\x02p
