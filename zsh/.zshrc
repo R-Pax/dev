@@ -9,6 +9,9 @@ precmd() {
   print -n "\e[8A"
 }
 
+# tmux 
+alias mux='tmux new-session -A -s main'
+
 # Prompt
 PROMPT='%n@  %1~ %# '
 
@@ -19,7 +22,7 @@ autoload -Uz vcs_info
 precmd_vcs_info() {
     vcs_info
 
-    if [[ -n "$vcs_info_msg_0_" ]]; then
+    if [[ -n "$vcs_info_msg_0_" ]]; then 
         RPROMPT=" ${vcs_info_msg_0_}"
     else
         RPROMPT=""
