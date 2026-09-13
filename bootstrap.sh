@@ -5,7 +5,7 @@ set -e
 
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
 
-WALLPAPER="$CURRENT_DIR/arch.png"
+WALLPAPER="$CURRENT_DIR/black.png"
 
 # -------------- macOS --------------
 
