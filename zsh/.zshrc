@@ -10,7 +10,23 @@ precmd() {
 }
 
 # tmux 
-alias mux='tmux new-session -A -s main'
+mux() {
+    if tmux has-session -t main 2>/dev/null; then
+        tmux attach-session -t main
+        return
+    fi
+
+    tmux new-session -d -s main -n nvim
+    tmux send-keys -t main:1 'nvim documents/' C-m
+
+    tmux new-window -t main -n git
+    tmux send-keys -t main:2 'cd documents' C-m
+
+    tmux new-window -t main -n zsh
+
+    tmux select-window -t main:1
+    tmux attach-session -t main
+}
 
 # Prompt
 PROMPT='%n@  %1~ %# '
