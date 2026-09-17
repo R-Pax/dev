@@ -21,6 +21,7 @@ mux() {
 
     tmux new-window -t main -n git
     tmux send-keys -t main:2 'cd documents' C-m
+    tmux send-keys -t main:2 'clear' C-m
 
     tmux new-window -t main -n zsh
 
