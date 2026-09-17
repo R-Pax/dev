@@ -1,0 +1,17 @@
+{
+  "version": "2026.914.1325",
+  "rulesets": [
+    "+annoyances-notifications",
+    "+annoyances-ai",
+    "+block-lan",
+    "+annoyances-cookies"
+  ],
+  "filteringModes": {
+    "none": [],
+    "basic": [],
+    "optimal": [],
+    "complete": [
+      "all-urls"
+    ]
+  }
+}
