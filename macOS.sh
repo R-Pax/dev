@@ -3,7 +3,7 @@
 # quit on error
 set -e 
 
-CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/macOS" && pwd)}"
 
 WALLPAPER="$CURRENT_DIR/black.png"
 
@@ -84,7 +84,7 @@ brew update
 
 brew trust --formula koekeishiya/formulae/yabai
 
-brew bundle --file=Brewfile
+brew bundle --file=macOS/Brewfile
 
 # -------------- Set up configs --------------
 
