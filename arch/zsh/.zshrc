@@ -1,3 +1,5 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
+
 # Prompt
 PROMPT='%n@  %1~ %# '
 
@@ -19,3 +21,4 @@ precmd_functions+=( precmd_vcs_info )
 
 zstyle ':vcs_info:git:*' formats '%b'
 setopt prompt_subst
+

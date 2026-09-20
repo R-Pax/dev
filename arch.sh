@@ -5,6 +5,14 @@ set -e
 
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
+# ------------- brew --------------
+
+if ! command -v brew &>/dev/null; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+brew update
+
 # -------------- Set up configs --------------
 
 CONFIGS=(
