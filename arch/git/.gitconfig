@@ -1,0 +1,16 @@
+[core]
+	excludesfile = /home/pax/.gitignore_global
+[user]
+	name = R-Pax
+    email = git@mac.hm
+
+# better git commands 
+
+[log]
+    date = relative
+[format]
+    pretty = tformat:'%Cred%h%Creset - %C(auto)%d%Creset %s %Cgreen(%ae %ad)%Creset'
+
+[status]
+    short = true
+    branch = true
