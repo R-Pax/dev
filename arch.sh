@@ -38,6 +38,7 @@ PROTECTED_CONFIGS=(
 
 CONFIGS=(
 	"hypr/hyprland.conf:$HOME/.config/hypr/hyprland.conf"
+    "hypr/hyprpaper.conf:$HOME/.config/hypr/hyprpaper.conf"
 	"git/.gitconfig:$HOME/.gitconfig"
 	"zsh/.zshrc:$HOME/.zshrc"
 	"foot/foot.ini:$HOME/.config/foot/foot.ini"
