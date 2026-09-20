@@ -15,9 +15,16 @@ brew update
 
 # -------------- Set up configs --------------
 
+PROTECTED_CONFIGS=(
+	"hypr/hyprland.conf:$HOME/.config/hypr/hyprland.conf"
+)
+
 CONFIGS=(
 	"hypr/hyprland.conf:$HOME/.config/hypr/hyprland.conf"
 	"git/.gitconfig:$HOME/.gitconfig"
+	"zsh/.zshrc:$HOME/.zshrc"
+	"foot/foot.ini:$HOME/.config/foot/foot.ini"
+	"tmux/.tmux.conf:$HOME/.tmux.conf"
 )
 
 for entry in "${CONFIGS[@]}"; do
@@ -25,7 +32,7 @@ for entry in "${CONFIGS[@]}"; do
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
 
-   if [ -e "$dest" ] || [ -L "$dest" ]; then
+   if [[ -e "$dest" && ! ( " ${PROTECTED_CONFIGS[*]} " == *" $config "* ) && ! -L "$dest" ]]; then
         rm -rf "$dest"
    fi
 
