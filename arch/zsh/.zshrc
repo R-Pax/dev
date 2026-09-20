@@ -10,10 +10,10 @@ mux() {
         return
     fi
 
-    tmux new-session -d -s main -n nvim
+    tmux new-session -d -s main -n 
     tmux send-keys -t main:1 'nvim Documents' C-m
 
-    tmux new-window -t main -n git
+    tmux new-window -t main -n 
     tmux send-keys -t main:2 'cd Documents' C-m
     tmux send-keys -t main:2 'clear' C-m
 
