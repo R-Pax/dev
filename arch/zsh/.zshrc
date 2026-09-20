@@ -1,7 +1,7 @@
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
 # Prompt
-PROMPT='%n@  %1~ %# '
+PROMPT='%n@ 󰣇 %1~ %# '
 
 # Git status rightprompt
 
