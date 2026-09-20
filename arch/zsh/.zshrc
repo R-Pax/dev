@@ -1,5 +1,25 @@
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
+# tmux 
+mux() {
+    if tmux has-session -t main 2>/dev/null; then
+        tmux attach-session -t main
+        return
+    fi
+
+    tmux new-session -d -s main -n nvim
+    tmux send-keys -t main:1 'nvim Documents' C-m
+
+    tmux new-window -t main -n git
+    tmux send-keys -t main:2 'cd Documents' C-m
+    tmux send-keys -t main:2 'clear' C-m
+
+    tmux new-window -t main -n zsh
+
+    tmux select-window -t main:1
+    tmux attach-session -t main
+}
+
 # Prompt
 PROMPT='%n@ 󰣇 %1~ %# '
 
