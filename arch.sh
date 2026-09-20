@@ -42,6 +42,7 @@ CONFIGS=(
 	"zsh/.zshrc:$HOME/.zshrc"
 	"foot/foot.ini:$HOME/.config/foot/foot.ini"
 	"tmux/.tmux.conf:$HOME/.tmux.conf"
+	"nvim:$HOME/.config/nvim"
 )
 
 for entry in "${CONFIGS[@]}"; do
