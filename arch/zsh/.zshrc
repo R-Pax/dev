@@ -1,5 +1,8 @@
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
 
+export LANG=C.UTF-8
+export LC_CTYPE=C.UTF-8
+
 # tmux 
 mux() {
     if tmux has-session -t main 2>/dev/null; then
