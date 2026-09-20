@@ -5,6 +5,23 @@ set -e
 
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
+# ------------- Locale --------------
+
+LOCALE="en_US.UTF-8"
+
+if ! grep -q "^${LOCALE} UTF-8$" /etc/locale.gen; then
+    sudo sed -i "s/^#${LOCALE} UTF-8$/${LOCALE} UTF-8/" /etc/locale.gen
+fi
+
+sudo locale-gen
+
+if [[ "$(grep '^LANG=' /etc/locale.conf 2>/dev/null || true)" != "LANG=${LOCALE}" ]]; then
+    echo "LANG=${LOCALE}" | sudo tee /etc/locale.conf >/dev/null
+fi
+
+export LANG="$LOCALE"
+export LC_CTYPE="$LOCALE"
+
 # ------------- brew --------------
 
 if ! command -v brew &>/dev/null; then
@@ -32,7 +49,7 @@ for entry in "${CONFIGS[@]}"; do
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
 
-   if [[ -e "$dest" && ! ( " ${PROTECTED_CONFIGS[*]} " == *" $config "* ) && ! -L "$dest" ]]; then
+   if [[ -e "$dest" && ! ( " ${PROTECTED_CONFIGS[*]} " == *" $entry "* ) && ! -L "$dest" ]]; then
         rm -rf "$dest"
    fi
 
