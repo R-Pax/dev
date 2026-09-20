@@ -17,8 +17,6 @@ mux() {
     tmux send-keys -t main:2 'cd Documents' C-m
     tmux send-keys -t main:2 'clear' C-m
 
-    tmux new-window -t main -n zsh
-
     tmux select-window -t main:1
     tmux attach-session -t main
 }
