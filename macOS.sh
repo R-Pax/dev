@@ -66,12 +66,13 @@ echo "Set up mouse"
 
 # Sounds
 defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
-defaults -currentHost write com.apple.notificationcenterui doNotDisturb -bool true                                        main
+defaults -currentHost write com.apple.notificationcenterui doNotDisturb -bool true
 killall NotificationCenter
 
 # Folders
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
+defaults write com.apple.finder "FXRemoveOldTrashItems" -bool true
 echo "Spring loaded folder settings"
 
 killall Dock Finder     
