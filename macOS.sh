@@ -66,6 +66,8 @@ echo "Set up mouse"
 
 # Sounds
 defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
+defaults -currentHost write com.apple.notificationcenterui doNotDisturb -bool true                                        main
+killall NotificationCenter
 
 # Folders
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
