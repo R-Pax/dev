@@ -74,6 +74,9 @@ defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
 defaults write com.apple.finder "FXRemoveOldTrashItems" -bool true
 
+# Open new Finder windows in Documents folder
+defaults write com.apple.finder NewWindowTargetPath -string "file:///$HOME/Documents"
+
 # No cmd m animation
 defaults write NSGlobalDomain NSWindowResizeTime .001
 
