@@ -1,3 +1,6 @@
+sudo yabai --load-sa
+yabai -m config skip_window_focus_animation on
+
 yabai -m space 1 --label main
 
 yabai -m space 2 --label terminal
