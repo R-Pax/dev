@@ -91,6 +91,7 @@ brew bundle --file=macOS/Brewfile
 CONFIGS=(
     "zsh/.zshrc:$HOME/.zshrc"
     "yabai/yabairc:$HOME/.yabairc"
+    "yabai/skhdrc:$HOME/.config/skhd/skhdrc"
     "ghostty/config.ghostty:$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
     "nvim:$HOME/.config/nvim"
     "git/.gitconfig:$HOME/.gitconfig"
