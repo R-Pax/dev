@@ -73,6 +73,10 @@ killall NotificationCenter
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
 defaults write com.apple.finder "FXRemoveOldTrashItems" -bool true
+
+# No cmd m animation
+defaults write NSGlobalDomain NSWindowResizeTime .001
+
 echo "Spring loaded folder settings"
 
 killall Dock Finder     
