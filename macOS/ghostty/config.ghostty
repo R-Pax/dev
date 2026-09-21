@@ -1,10 +1,13 @@
+font-family = SFMono Nerd Font
+# font-family = Acplus IBM EGA 8x14 
+# font-family = IBM CP437 8x8 
+font-size = 40
+
 background-image = ~/Documents/dev/macOS/ghostty/akame.png
 background-image-fit = cover
 background-image-position = center
 
 window-decoration = none
-        
-font-size = 42
 
 # tmux
 
