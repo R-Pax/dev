@@ -84,6 +84,13 @@ echo "Spring loaded folder settings"
 
 killall Dock Finder     
 
+
+if ! [ -e "$HOME/System/Library/Fonts/SFMono.otf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.otf" ]; then
+       # ln -sf "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
+       cp "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
+fi
+
+
 # -------------- brew --------------
 
 if ! command -v brew &>/dev/null; then
