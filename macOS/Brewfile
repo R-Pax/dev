@@ -3,3 +3,4 @@ brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 cask "Ghostty", trusted: true
 brew "tmux", trusted: true
+brew "zsh-syntax-highlighting", trusted: true
