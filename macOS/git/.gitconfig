@@ -13,7 +13,6 @@
 
 [status]
     short = true
-    branch = true
 
 [color]
     ui = true
@@ -27,9 +26,18 @@
     untracked = "#d75f5f"
     unmerged = "#d75f5f"
 
+[color "branch"]
+    current = "#c0b18b"
+    local = "#af865a"
+    remote = "#d75f5f"
+    upstream = "#22c3a1"
+    plain = "#c0b18b"
+
 [color "diff"]
     meta = "#c0b18b"
     frag = "#84edb9"
     old = "#d75f5f"
     new = "#d4d232"
 
+[color "push"]
+    error = "#d75f5f"
