@@ -30,7 +30,7 @@ mux() {
 }
 
 # Prompt
-PROMPT='%F{red}%n%f@mac %F{blue}%1~%f $ '
+PROMPT='%F{yellow}%f '
 
 # Git status rightprompt
 
