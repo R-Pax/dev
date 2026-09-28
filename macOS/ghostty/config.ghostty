@@ -3,9 +3,11 @@ font-family = SFMono Nerd Font
 # font-family = IBM CP437 8x8 
 font-size = 40
 
-background-image = ~/Documents/dev/macOS/ghostty/akame.png
+background-image = ~/Documents/dev/macOS/ghostty/wolf.png
 background-image-fit = cover
 background-image-position = center
+background-opacity = 0.20
+background-blur=16
 
 # window-decoration = none
 macos-titlebar-style = hidden
