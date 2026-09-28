@@ -5,7 +5,7 @@ set -e
 
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/macOS" && pwd)}"
 
-WALLPAPER="$CURRENT_DIR/black.png"
+WALLPAPER="$CURRENT_DIR/black.jxl"
 
 # -------------- macOS --------------
 
@@ -66,13 +66,30 @@ echo "Set up mouse"
 
 # Sounds
 defaults write NSGlobalDomain com.apple.sound.beep.volume -int 0
+defaults -currentHost write com.apple.notificationcenterui doNotDisturb -bool true
+killall NotificationCenter
 
 # Folders
 defaults write NSGlobalDomain com.apple.springing.enabled -bool true
 defaults write NSGlobalDomain com.apple.springing.delay -float 0.5
+defaults write com.apple.finder "FXRemoveOldTrashItems" -bool true
+
+# Open new Finder windows in Documents folder
+defaults write com.apple.finder NewWindowTargetPath -string "file:///$HOME/Documents"
+
+# No cmd m animation
+defaults write NSGlobalDomain NSWindowResizeTime .001
+
 echo "Spring loaded folder settings"
 
 killall Dock Finder     
+
+
+if ! [ -e "$HOME/System/Library/Fonts/SFMono.otf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.otf" ]; then
+       # ln -sf "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
+       cp "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
+fi
+
 
 # -------------- brew --------------
 
