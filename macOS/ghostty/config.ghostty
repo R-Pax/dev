@@ -3,6 +3,18 @@ font-family = SFMono Nerd Font
 # font-family = IBM CP437 8x8 
 font-size = 40
 
+foreground = #C0B18B
+background = #151515
+
+palette = 0=#2F2F2F
+palette = 1=#D75F5F
+palette = 2=#D4D232
+palette = 3=#AF865A
+palette = 4=#22C3A1
+palette = 5=#775759
+palette = 6=#84EDB9
+palette = 7=#C0B18B
+
 background-image = ~/Documents/dev/macOS/ghostty/wolf.png
 background-image-fit = cover
 background-image-position = center
