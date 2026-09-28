@@ -14,3 +14,22 @@
 [status]
     short = true
     branch = true
+
+[color]
+    ui = true
+
+[color "status"]
+    header = "#c0b18b"
+    localBranch = "#c0b18b"
+    remoteBranch = "#d75f5f"
+    added = "#c0b18b"
+    changed = "#af865a"
+    untracked = "#d75f5f"
+    unmerged = "#d75f5f"
+
+[color "diff"]
+    meta = "#c0b18b"
+    frag = "#84edb9"
+    old = "#d75f5f"
+    new = "#d4d232"
+
