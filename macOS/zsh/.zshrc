@@ -52,3 +52,19 @@ zstyle ':vcs_info:git:*' formats '%b'
 setopt prompt_subst
 
 mux
+
+# terminal colors
+
+source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# Recognized commands color 3 (#af865a)
+ZSH_HIGHLIGHT_STYLES[command]='fg=3'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=3'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=3'
+ZSH_HIGHLIGHT_STYLES[function]='fg=3'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=3'
+
+# Unknown commands color 7 (#c0b18b) 
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=7'
