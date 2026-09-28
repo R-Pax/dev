@@ -6,7 +6,7 @@ font-size = 40
 background-image = ~/Documents/dev/macOS/ghostty/wolf.png
 background-image-fit = cover
 background-image-position = center
-background-opacity = 0.20
+background-opacity = 0.4 
 background-blur=16
 
 # window-decoration = none
