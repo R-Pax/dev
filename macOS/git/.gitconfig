@@ -8,8 +8,10 @@
 
 [log]
     date = relative
+
 [format]
-    pretty = tformat:'%Cred%h%Creset - %C(auto)%d%Creset %s %Cgreen(%ae %ad)%Creset'
+    pretty = tformat:'%C("#af865a")%h%Creset %C(auto)%d%Creset %s %C("#84edb9")(%ae %ad)%Creset'
+
 
 [status]
     short = true
