@@ -7,7 +7,8 @@ background-image = ~/Documents/dev/macOS/ghostty/akame.png
 background-image-fit = cover
 background-image-position = center
 
-window-decoration = none
+# window-decoration = none
+macos-titlebar-style = hidden
 
 # tmux
 
@@ -16,6 +17,8 @@ keybind = cmd+t=text:\x02c
 keybind = cmd+w=text:\x02W
 
 keybind = cmd+k=text:clear\x0d
+
+confirm-close-surface = false
 
 # tmux next/previous window
 
