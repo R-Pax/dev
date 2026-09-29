@@ -20,11 +20,6 @@ mux() {
     tmux new-session -d -s "$session" -n ""
     tmux send-keys -t "$session:1" 'nvim Documents' C-m
 
-    tmux new-window -t "$session" -n ""
-    tmux send-keys -t "$session:2" 'cd Documents' C-m
-    tmux send-keys -t "$session:2" 'clear' C-m
-
-    tmux select-window -t "$session:1"
     exec tmux attach-session -t "$session"
 }
 
