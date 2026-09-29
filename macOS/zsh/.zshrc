@@ -11,22 +11,21 @@ precmd() {
   print -n "\e[8A"
 }
 
-# tmux 
+# tmux
 mux() {
-    if tmux has-session -t main 2>/dev/null; then
-        tmux attach-session -t main
-        return
-    fi
+    [[ -n "$TMUX" ]] && return
 
-    tmux new-session -d -s main -n 
-    tmux send-keys -t main:1 'nvim Documents' C-m
+    local session="ghostty-$$"
 
-    tmux new-window -t main -n 
-    tmux send-keys -t main:2 'cd Documents' C-m
-    tmux send-keys -t main:2 'clear' C-m
+    tmux new-session -d -s "$session" -n ""
+    tmux send-keys -t "$session:1" 'nvim Documents' C-m
 
-    tmux select-window -t main:1
-    tmux attach-session -t main
+    tmux new-window -t "$session" -n ""
+    tmux send-keys -t "$session:2" 'cd Documents' C-m
+    tmux send-keys -t "$session:2" 'clear' C-m
+
+    tmux select-window -t "$session:1"
+    tmux attach-session -t "$session"
 }
 
 # Prompt
