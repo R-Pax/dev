@@ -36,12 +36,3 @@ confirm-close-surface = false
 
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p
-
-palette = 0=#2E2E2E
-palette = 1=#D95E5C
-palette = 2=#0BC4A1
-palette = 3=#D4D313
-palette = 4=#80EEB8
-palette = 5=#c678dd
-palette = 6=#56b6c2
-palette = 7=#C0B289
