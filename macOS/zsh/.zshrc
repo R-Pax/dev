@@ -25,7 +25,7 @@ mux() {
     tmux send-keys -t "$session:2" 'clear' C-m
 
     tmux select-window -t "$session:1"
-    tmux attach-session -t "$session"
+    exec tmux attach-session -t "$session"
 }
 
 # Prompt
