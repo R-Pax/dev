@@ -20,7 +20,7 @@ yabai -m config --space 2 right_padding 20
 yabai -m config --space 2 left_padding 20
 yabai -m config --space 2 top_padding 20
 yabai -m config --space 2 bottom_padding 20
-yabai -m config --space 2 window_padding 20
+yabai -m config --space 2 window_gap 20
 
 # chat
 yabai -m rule --add app="^Mail$" space=chat
