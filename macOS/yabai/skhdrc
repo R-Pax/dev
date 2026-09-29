@@ -9,3 +9,8 @@ cmd + shift - h : yabai -m window --focus west
 cmd + shift - j : yabai -m window --focus south
 cmd + shift - k : yabai -m window --focus north
 cmd + shift - l : yabai -m window --focus east
+
+cmd + shift - n : open -na Ghostty.app --args \
+    --window-save-state=never \
+    --title="Floating Ghostty" \
+    -e /bin/zsh -f

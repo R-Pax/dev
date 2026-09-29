@@ -13,8 +13,19 @@ yabai -m rule --add app="^Safari$" space=main
 
 yabai -m config --space 2 layout bsp
 
-yabai -m rule --add app="^Terminal$" space=terminal
-yabai -m rule --add app="^Ghostty$" space=terminal
+# Normal Ghostty windows
+yabai -m rule --add \
+    app="^Ghostty$" \
+    space=terminal
+
+# Floating Ghostty 
+yabai -m rule --add \
+    app="^Ghostty$" \
+    title="^Floating Ghostty$" \
+    space=terminal \
+    manage=off \
+    grid=4:4:1:1:2:2
+
 
 yabai -m config --space 2 right_padding 20
 yabai -m config --space 2 left_padding 20
