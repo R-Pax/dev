@@ -14,6 +14,9 @@ background-image-fit = contain
 background-image-position = center
 background-blur=16
 
+# open new ghostty window 
+keybind = cmd+n=new_window
+
 # Text color 
 foreground = #C0B18B
 
@@ -50,9 +53,6 @@ palette = 7=#c0b18b
 macos-titlebar-style = hidden
 
 # tmux settings, ghostty only manages keyboard shortcuts
-
-# open new ghostty window 
-keybind = cmd+n=new_window
 
 # open new tmux window (tab)
 keybind = cmd+t=text:\x02c
