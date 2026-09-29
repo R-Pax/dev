@@ -86,8 +86,11 @@ killall Dock Finder
 
 
 if ! [ -e "$HOME/System/Library/Fonts/SFMono.otf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.otf" ]; then
-       # ln -sf "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
        cp "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
+fi
+
+if ! [ -e "$HOME/System/Library/Fonts/FantasqueMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/FantasqueMono.ttf" ]; then
+       cp "$CURRENT_DIR/ghostty/FantasqueMono.ttf" "$HOME/Library/Fonts/FantasqueMono.ttf"
 fi
 
 
