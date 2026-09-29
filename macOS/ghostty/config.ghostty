@@ -26,11 +26,11 @@ macos-titlebar-style = hidden
 
 # tmux
 
-keybind = cmd+n=text:\x02c
+keybind = cmd+n=new_window
 keybind = cmd+t=text:\x02c
-keybind = cmd+w=text:\x02W
+keybind = cmd+w=text:\x02&
 
-keybind = cmd+k=text:clear\x0d
+keybind = cmd+k=text:\x0c
 
 confirm-close-surface = false
 
