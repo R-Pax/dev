@@ -45,9 +45,7 @@ precmd_functions+=( precmd_vcs_info )
 zstyle ':vcs_info:git:*' formats '%b'
 setopt prompt_subst
 
-if [[ "$GHOSTTY_FLOATING" != "1" ]]; then
-    mux
-fi
+mux 
 
 # terminal colors
 
