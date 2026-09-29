@@ -1,38 +1,68 @@
+# Fonts
 # font-family = SFMono Nerd Font
 font-family = FantasqueSansM Nerd Font Mono
+
+# Disable Cmd + Q popup
+confirm-close-surface = false
+
+# Font size in pixels
 font-size = 30
 
-foreground = #C0B18B
-background = #212121
-
-palette = 0=#2f2f2f
-palette = 1=#d75f5f
-palette = 2=#d4d232
-palette = 3=#af865a
-palette = 4=#22c3a1
-palette = 5=#775759
-palette = 6=#84edb9
-palette = 7=#c0b18b
-
+# Background settings
 background-image = ~/Documents/dev/macOS/ghostty/wolf.png
 background-image-fit = contain
 background-image-position = center
 background-blur=16
 
-# window-decoration = none
+# Text color 
+foreground = #C0B18B
+
+# Background color (matches background image)
+background = #212121
+
+# Terminal colors
+
+# black
+palette = 0=#2f2f2f
+
+# red
+palette = 1=#d75f5f
+
+# green
+palette = 2=#d4d232
+
+# yellow
+palette = 3=#af865a
+
+# blue
+palette = 4=#22c3a1
+
+# magenta
+palette = 5=#775759
+
+# cyan
+palette = 6=#84edb9
+
+# white
+palette = 7=#c0b18b
+
+# hide the macOS default title bar
 macos-titlebar-style = hidden
 
-# tmux
+# tmux settings, ghostty only manages keyboard shortcuts
 
+# open new ghostty window 
 keybind = cmd+n=new_window
+
+# open new tmux window (tab)
 keybind = cmd+t=text:\x02c
+
+# close tmux window (tab)
 keybind = cmd+w=text:\x02&
 
+# cmd k to clear the terminal
 keybind = cmd+k=text:\x0c
 
-confirm-close-surface = false
-
 # tmux next/previous window
-
 keybind = ctrl+tab=text:\x02n
 keybind = ctrl+shift+tab=text:\x02p
