@@ -3,7 +3,7 @@ font-family = FantasqueSansM Nerd Font Mono
 font-size = 30
 
 foreground = #C0B18B
-background = #151515
+background = #212121
 
 palette = 0=#2f2f2f
 palette = 1=#d75f5f
@@ -15,7 +15,7 @@ palette = 6=#84edb9
 palette = 7=#c0b18b
 
 background-image = ~/Documents/dev/macOS/ghostty/wolf.png
-background-image-fit = cover
+background-image-fit = contain
 background-image-position = center
 background-blur=16
 
