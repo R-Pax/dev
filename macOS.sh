@@ -2,7 +2,6 @@
 
 # quit on error
 set -e 
-
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/macOS" && pwd)}"
 
 WALLPAPER="$CURRENT_DIR/black.jxl"
@@ -106,6 +105,26 @@ brew trust --formula koekeishiya/formulae/yabai
 
 brew bundle --file=macOS/Brewfile
 
+# -------------- firefox --------------
+
+FIREFOX_DIR="$HOME/Library/Application Support/Firefox"
+
+profile="$(awk -F= '
+    /^\[Install/{f=1}
+    f && /^Default=/{print $2; exit}
+' "$FIREFOX_DIR/profiles.ini")"
+
+if [ -z "$profile" ]; then
+    profile="$(awk -F= '
+        /^\[Profile/{p=""; d=0}
+        /^Path=/{p=$2}
+        /^Default=1/{d=1}
+        d && p{print p; exit}
+    ' "$FIREFOX_DIR/profiles.ini")"
+fi
+
+FIREFOX_PROFILE="$FIREFOX_DIR/$profile"
+
 # -------------- Set up configs --------------
 
 CONFIGS=(
@@ -117,6 +136,14 @@ CONFIGS=(
     "git/.gitconfig:$HOME/.gitconfig"
     "git/.gitignore_global:$HOME/.gitignore_global" 
     "tmux/.tmux.conf:$HOME/.tmux.conf"
+    "firefox/userChrome.css:$FIREFOX_PROFILE/chrome/userChrome.css"
+    "firefox/userContent.css:$FIREFOX_PROFILE/chrome/userContent.css"
+    "firefox/variables.css:$FIREFOX_PROFILE/chrome/variables.css"
+    "firefox/navbar.css:$FIREFOX_PROFILE/chrome/navbar.css"
+    "firefox/urlbar.css:$FIREFOX_PROFILE/chrome/urlbar.css"
+    "firefox/tabbar.css:$FIREFOX_PROFILE/chrome/tabbar.css"
+    "firefox/icons.css:$FIREFOX_PROFILE/chrome/icons.css"
+    "firefox/user.js:$FIREFOX_PROFILE/user.js"
 )
 
 for entry in "${CONFIGS[@]}"; do
