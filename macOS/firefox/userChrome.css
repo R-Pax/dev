@@ -1,7 +1,6 @@
 /* Firefox macOS style */
 @import "variables.css";
-@import "navbar.css";
-@import "urlbar.css";
+@import "navbar.css"; @import "urlbar.css";
 @import "icons.css";
 @import "tabbar.css";
 
@@ -168,4 +167,16 @@ browser {
 
 :root:-moz-window-inactive #urlbar {
     background: var(--urlbar-overlay-non-active) !important;
+}
+
+/* Hide the VPN toolbar button */
+toolbarbutton[label="VPN"],
+toolbarbutton[aria-label="VPN"],
+toolbarbutton[title="VPN"] {
+    display: none !important;
+}
+
+/* Hide the Firefox profile/account button */
+#fxa-toolbar-menu-button {
+    display: none !important;
 }
