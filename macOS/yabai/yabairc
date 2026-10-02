@@ -1,36 +1,30 @@
+# Disabling SIP is needed for space focusing to work
+# Space focusing does not work on macOS 27
+
 sudo yabai --load-sa
 yabai -m config skip_window_focus_animation on
 
+# space labels
 yabai -m space 1 --label main
 yabai -m space 2 --label terminal
 yabai -m space 3 --label chat
 yabai -m space 4 --label music
 
-# main
+# window rules
 yabai -m rule --add app="^Safari$" space=main
-
-# terminal
-
-yabai -m config --space 2 layout bsp
-
-yabai -m rule --add app="^Terminal$" space=terminal
 yabai -m rule --add app="^Ghostty$" space=terminal
+yabai -m rule --add app="^Discord$" space=chat
+yabai -m rule --add app="^Messages$" space=chat
+yabai -m rule --add app="^WhatsApp$" space=chat
 
+# terminal space padding 
 yabai -m config --space 2 right_padding 20
 yabai -m config --space 2 left_padding 20
 yabai -m config --space 2 top_padding 20
 yabai -m config --space 2 bottom_padding 20
 yabai -m config --space 2 window_gap 20
 
-# chat
-yabai -m rule --add app="^Mail$" space=chat
-yabai -m rule --add app="^Discord$" space=chat
-yabai -m rule --add app="^Messages$" space=chat
-yabai -m rule --add app="^WhatsApp$" space=chat
-
-# music
-yabai -m rule --add app="^Music$" space=music
-
+# set space layout as tree
 yabai -m config layout bsp
 
 yabai -m config window_placement second_child
