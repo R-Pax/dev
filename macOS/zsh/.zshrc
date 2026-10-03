@@ -23,6 +23,14 @@ mux() {
     exec tmux attach-session -t "$session"
 }
 
+# obsidian
+obsidian() {
+  nvim \
+    -c 'lua vim.api.nvim_create_autocmd({"TextChanged", "TextChangedI"}, { pattern = "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/**", callback = function() vim.cmd("silent! update") end })' \
+    "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/"
+}
+
+
 # Prompt
 PROMPT='%F{yellow}%f '
 
