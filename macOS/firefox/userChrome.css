@@ -3,7 +3,7 @@
 @import "navbar.css"; @import "urlbar.css";
 @import "icons.css";
 @import "tabbar.css";
-
+@import "singlerow.css";
 
 /* Active Window Styles */
 #navigator-toolbox,

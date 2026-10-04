@@ -1,0 +1,101 @@
+/* Safari-style compact tab row. */
+
+:root {
+	--uc-tab-width: 180px;      /* tab size; tabs shrink when there are many */
+	--uc-urlbar-width: 180px;   /* width of the URL bar when it appears */
+	--uc-row-height: 44px;
+}
+
+/* ---------- Traffic lights ---------- */
+.titlebar-buttonbox-container,
+.titlebar-spacer {
+	display: none !important;
+}
+
+/* ---------- Tabs ---------- */
+#TabsToolbar {
+	padding: 4px 8px !important;
+}
+
+/* Small fixed-size tabs, centered in the row. Each tab keeps the rounded
+   background from tabbar.css */
+#tabbrowser-arrowscrollbox::part(scrollbox) {
+	justify-content: safe center;
+}
+
+.tabbrowser-tab:not([pinned]) {
+	flex: 0 1 var(--uc-tab-width) !important;
+}
+
+/* Show close button only on hover */
+.tab-close-button {
+	opacity: 0;
+}
+
+.tabbrowser-tab:hover .tab-close-button {
+	opacity: 1;
+}
+
+/* No new tab button */
+#tabs-newtab-button,
+#new-tab-button {
+	display: none !important;
+}
+
+/* ---------- URL bar ---------- */
+.tabbrowser-tab[selected] {
+	anchor-name: --uc-active-tab;
+}
+
+#navigator-toolbox {
+	position: relative;
+
+	#nav-bar {
+
+        /* Hide everything in the navigation bar */
+		position: absolute !important;
+		position-anchor: --uc-active-tab;
+		top: 0;
+		left: clamp(0px, calc(anchor(center) - var(--uc-urlbar-width) / 2), calc(100% - var(--uc-urlbar-width)));
+		width: var(--uc-urlbar-width);
+		height: var(--uc-row-height) !important;
+		padding-inline: 2px !important;
+		z-index: 3;
+		opacity: 0;
+		pointer-events: none;
+		background: transparent !important;
+		appearance: none !important;
+		transition: opacity 0.12s ease;
+
+		/* Only the URL bar itself is shown */
+		#nav-bar-customization-target > :not(#urlbar-container),
+		#nav-bar-overflow-button,
+		#PanelUI-button {
+			display: none !important;
+		}
+
+		#urlbar-container {
+			max-width: none !important;
+			width: 100%;
+		}
+	}
+
+    /* Only show URL bar when typing */
+	&:has(#nav-bar:focus-within #urlbar:is([pageproxystate="valid"], [usertyping], [open])) {
+		#nav-bar {
+			opacity: 1;
+		}
+
+		#urlbar-container {
+			pointer-events: auto;
+		}
+
+		#urlbar {
+			background-color: Canvas !important;
+		}
+
+		.tabbrowser-tab[selected] {
+			opacity: 0;
+		}
+	}
+}
