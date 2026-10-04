@@ -143,6 +143,7 @@ CONFIGS=(
     "firefox/urlbar.css:$FIREFOX_PROFILE/chrome/urlbar.css"
     "firefox/tabbar.css:$FIREFOX_PROFILE/chrome/tabbar.css"
     "firefox/icons.css:$FIREFOX_PROFILE/chrome/icons.css"
+    "firefox/singlerow.css:$FIREFOX_PROFILE/chrome/singlerow.css"
     "firefox/user.js:$FIREFOX_PROFILE/user.js"
 )
 
