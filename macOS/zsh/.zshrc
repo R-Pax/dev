@@ -17,7 +17,7 @@ mux() {
 
     local session="ghostty-$$"
 
-    tmux new-session -d -s "$session" -n ""
+    tmux new-session -d -s "$session" -n ""
     tmux send-keys -t "$session:1" 'nvim Documents' C-m
 
     exec tmux attach-session -t "$session"
