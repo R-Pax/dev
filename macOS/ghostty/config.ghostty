@@ -17,6 +17,9 @@ background-blur=16
 # open new ghostty window 
 keybind = cmd+n=new_window
 
+# Cmd+S writes in nvim
+keybind = cmd+s=text:\x1b[25~
+
 # Text color 
 foreground = #C0B18B
 
