@@ -1,6 +1,6 @@
 # Fonts
-# font-family = SFMono Nerd Font
-font-family = FantasqueSansM Nerd Font Mono
+font-family = SFMono Nerd Font
+# font-family = FantasqueSansM Nerd Font Mono
 
 # Disable Cmd + Q popup
 confirm-close-surface = false
