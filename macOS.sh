@@ -84,8 +84,8 @@ echo "Spring loaded folder settings"
 killall Dock Finder     
 
 
-if ! [ -e "$HOME/System/Library/Fonts/SFMono.otf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.otf" ]; then
-       cp "$CURRENT_DIR/ghostty/SFMono.otf" "$HOME/Library/Fonts/SFMono.otf"
+if ! [ -e "$HOME/System/Library/Fonts/SFMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.ttf" ]; then
+       cp "$CURRENT_DIR/ghostty/SFMono.ttf" "$HOME/Library/Fonts/SFMono.ttf"
 fi
 
 if ! [ -e "$HOME/System/Library/Fonts/FantasqueMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/FantasqueMono.ttf" ]; then
