@@ -17,12 +17,13 @@ defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 echo "Dark mode on"
 
 # dock permahide
-defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 1000 
-echo "Removed the dock"
+# defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 1000 
+# echo "Removed the dock"
 
 # dock settings if I ever want it back 
+defaults write com.apple.dock show-process-indicators -bool false
 defaults write com.apple.dock orientation -string left
-defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock magnification -bool false
 defaults write com.apple.dock largesize -int 81
 defaults write com.apple.dock tilesize -int 78
 defaults write com.apple.dock minimize-to-application -bool true
