@@ -16,18 +16,39 @@ echo "Wallpaper" $WALLPAPER "set"
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 echo "Dark mode on"
 
+# -------------- Dock --------------
+
 # dock permahide
 # defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 1000 
 # echo "Removed the dock"
 
-# dock settings if I ever want it back 
+# Dock settings
+
+# Remove status dots
 defaults write com.apple.dock show-process-indicators -bool false
+
+# Remove downloads icon 
+defaults delete com.apple.dock persistent-others
+
+# Disable recent apps staying on the Dock forever
 defaults write com.apple.dock show-recents -bool false
+
+# Move the Dock to the left
 defaults write com.apple.dock orientation -string left
+
+# Disable magnification
 defaults write com.apple.dock magnification -bool false
+
+# Set icon sizes
 defaults write com.apple.dock largesize -int 81
 defaults write com.apple.dock tilesize -int 78
+
+# Minimized windows are kept in their icon
 defaults write com.apple.dock minimize-to-application -bool true
+
+# -------------- Miscellaneous macOS settings --------------
+
+# Don't arrange desktops by most recent
 defaults write com.apple.dock mru-spaces -bool false
 
 # square windows
