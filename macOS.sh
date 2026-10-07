@@ -22,6 +22,7 @@ echo "Dark mode on"
 
 # dock settings if I ever want it back 
 defaults write com.apple.dock show-process-indicators -bool false
+defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock orientation -string left
 defaults write com.apple.dock magnification -bool false
 defaults write com.apple.dock largesize -int 81
