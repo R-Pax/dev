@@ -27,7 +27,7 @@ mux() {
 obsidian() {
   nvim \
     -c 'lua vim.api.nvim_create_autocmd({"TextChanged", "TextChangedI"}, { pattern = "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/**", callback = function() vim.cmd("silent! update") end })' \
-    "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/Obsidian/"
+    "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/root/"
 }
 
 
