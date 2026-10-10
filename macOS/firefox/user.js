@@ -21,7 +21,14 @@ user_pref("places.history.enabled", false);
 user_pref("browser.formfill.enable", false);
 
 // Don't automatically clear browsing data when shut down
-user_pref("privacy.sanitize.sanitizeOnShutdown", false)
+user_pref("privacy.sanitize.sanitizeOnShutdown", false);
+
+// Disable all data collection settings
+user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled", false);
+user_pref("datareporting.usage.uploadEnabled", false);
+user_pref("toolkit.telemetry.enabled", false);
+user_pref("toolkit.telemetry.unified", false);
 
 // -------------- New tab page settings --------------
 
