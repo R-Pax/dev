@@ -1,0 +1,5 @@
+#folderPane,
+#threadPane {
+  background-color: var(--sh-bg);
+  color: var(--sh-text);
+}
