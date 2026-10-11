@@ -7,3 +7,28 @@
   background-color: var(--sh-bg);
   color: var(--sh-text);
 }
+
+#threadTree {
+  --thread-pane-container-gap: 2px;
+  --card-container-padding-block: 1px;
+  --selected-item-color: var(--sh-accent);
+  --selected-item-text-color: var(--sh-text);
+  --listbox-hover: color-mix(in srgb, var(--sh-accent) 7%, var(--sh-bg));
+  --listbox-selected-bg: var(--sh-surface);
+  --listbox-focused-selected-bg: color-mix(in srgb, var(--sh-accent) 18%, var(--sh-bg));
+  --listbox-selected-color: var(--sh-text);
+  --listbox-focused-selected-color: var(--sh-text);
+}
+
+#threadTree table[is="tree-view-table"] {
+  font-size: 0.92rem;
+  line-height: 1.25;
+}
+
+#threadTree :is(.sender, .sendercol-column) {
+  font-weight: 600;
+}
+
+#threadTree :is(.date, .datecol-column, .sort-header-details) {
+  color: var(--sh-muted);
+}
