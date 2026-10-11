@@ -1,4 +1,5 @@
 brew "nvim", trusted: true
+cask "Firefox", trusted: true
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 cask "Ghostty", trusted: true
