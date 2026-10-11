@@ -28,7 +28,7 @@ echo "Dark mode on"
 defaults write com.apple.dock show-process-indicators -bool false
 
 # Remove downloads icon 
-defaults delete com.apple.dock persistent-others
+# defaults delete com.apple.dock persistent-others
 
 # Disable recent apps staying on the Dock forever
 defaults write com.apple.dock show-recents -bool false
