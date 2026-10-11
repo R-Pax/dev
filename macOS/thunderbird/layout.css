@@ -21,7 +21,7 @@ global-search-bar {
   display: none !important;
 }
 
-#paneLayout.layout-classic {
+#paneLayout:is(.layout-classic, .layout-wide, .layout-vertical) {
   grid-template:
     "threads messagePaneSplitter message" minmax(0, 1fr)
     / minmax(300px, 3fr) min-content minmax(0, 1fr) !important;
@@ -39,6 +39,10 @@ global-search-bar {
 #messagePane {
   display: flex !important;
   min-inline-size: 0 !important;
+}
+
+#messagePane.collapsed-by-splitter {
+  display: flex !important;
 }
 
 #folderTree {
@@ -82,6 +86,12 @@ global-search-bar {
 
 #threadTree .card-container * {
   color: inherit !important;
+}
+
+#threadTree[rows="thread-card"] .thread-card-dynamic-row {
+  grid-template:
+    "button subject info" max-content
+    / auto minmax(0, 1fr) auto !important;
 }
 
 #threadTree tr.card-layout.selected.current {
