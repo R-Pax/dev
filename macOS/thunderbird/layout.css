@@ -2,6 +2,12 @@
   font-family: "Manrope" !important;
 }
 
+global-search-bar {
+  --search-bar-background: color-mix(in srgb, var(--sh-accent) 12%, var(--sh-surface));
+  --search-bar-border-color: color-mix(in srgb, var(--sh-accent) 35%, var(--sh-border));
+  --button-border-radius: 10px;
+}
+
 #folderPane,
 #threadPane {
   background-color: var(--sh-bg);
