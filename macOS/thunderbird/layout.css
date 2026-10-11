@@ -10,11 +10,22 @@ global-search-bar {
 
 #folderPane,
 #threadPane {
-  background-color: var(--sh-bg);
-  color: var(--sh-text);
+  background-color: var(--sh-bg) !important;
+  color: var(--sh-text) !important;
+}
+
+#folderPane {
+  background-color: var(--sh-surface) !important;
+}
+
+#folderTree {
+  background-color: var(--sh-surface) !important;
+  color: var(--sh-text) !important;
 }
 
 #threadTree {
+  background-color: var(--sh-bg) !important;
+  color: var(--sh-text) !important;
   --thread-pane-container-gap: 2px;
   --card-container-padding-block: 1px;
   --selected-item-color: var(--sh-accent);
@@ -36,6 +47,11 @@ global-search-bar {
   border-bottom: 1px solid var(--sh-border) !important;
   border-radius: 0 !important;
   background: transparent !important;
+  color: var(--sh-text) !important;
+}
+
+#threadTree .card-container * {
+  color: inherit !important;
 }
 
 #threadTree tr.card-layout.selected.current {
@@ -43,10 +59,19 @@ global-search-bar {
   color: var(--sh-text) !important;
 }
 
+#threadTree tr.table-layout.selected.current {
+  background-color: #41444b !important;
+  color: var(--sh-text) !important;
+}
+
+#threadTree tr.table-layout.selected.current td:first-child {
+  border-left: 2px solid var(--sh-accent) !important;
+}
+
 #threadTree :is(.sender, .sendercol-column) {
   font-weight: 600;
 }
 
 #threadTree :is(.date, .datecol-column, .sort-header-details) {
-  color: var(--sh-muted);
+  color: var(--sh-muted) !important;
 }
