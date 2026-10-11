@@ -5,6 +5,15 @@
   display: none !important;
 }
 
+.spaces-toolbar:not([hidden]) ~ #messengerBody,
+:root:not(.customizingUnifiedToolbar) .spaces-toolbar:not([hidden]) ~ #navigation-toolbox #titlebar {
+  margin-inline-start: 0 !important;
+}
+
+:root:not(.customizingUnifiedToolbar) .spaces-toolbar:not([hidden]) ~ #navigation-toolbox #unifiedToolbarContainer {
+  inline-size: 100vw !important;
+}
+
 * {
   font-family: "Manrope" !important;
   font-size: 13px !important;
