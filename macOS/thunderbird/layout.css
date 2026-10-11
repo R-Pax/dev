@@ -1,6 +1,4 @@
-* {
-  font-family: "Manrope" !important;
-}
+@-moz-document url-prefix("about:3pane") {
 
 global-search-bar {
   --search-bar-background: color-mix(in srgb, var(--sh-accent) 12%, var(--sh-surface));
@@ -17,6 +15,30 @@ global-search-bar {
 #folderPane {
   background-color: var(--sh-surface) !important;
   display: none !important;
+}
+
+#folderPaneSplitter {
+  display: none !important;
+}
+
+#paneLayout.layout-classic {
+  grid-template:
+    "threads messagePaneSplitter message" minmax(0, 1fr)
+    / minmax(300px, 3fr) min-content minmax(0, 1fr) !important;
+}
+
+#paneLayout {
+  font-size: 12px !important;
+}
+
+#threadPane {
+  font-size: 12px !important;
+  --thread-pane-container-gap: 0px;
+}
+
+#messagePane {
+  display: flex !important;
+  min-inline-size: 0 !important;
 }
 
 #folderTree {
@@ -38,19 +60,8 @@ global-search-bar {
   --listbox-focused-selected-color: var(--sh-text);
 }
 
-#threadTree #senderCol,
-#threadTree .sendercol-column {
-  display: table-cell !important;
-}
-
-#threadTree #correspondentCol,
-#threadTree .correspondentcol-column {
+#threadTree thead[is="tree-view-table-header"] {
   display: none !important;
-}
-
-#threadTree table.tree-table {
-  font-size: 0.92rem !important;
-  line-height: 1.25 !important;
 }
 
 #threadTree tr.table-layout {
@@ -93,4 +104,6 @@ global-search-bar {
 
 #threadTree :is(.date, .datecol-column, .sort-header-details) {
   color: var(--sh-muted) !important;
+}
+
 }
