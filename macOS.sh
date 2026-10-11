@@ -255,3 +255,17 @@ for entry in "${CONFIGS[@]}"; do
      echo "ERROR $dest does not exist"
  fi
 done
+
+# -------------- Custom icons --------------
+
+ICON_PATH="/Applications/Obsidian.app/Contents/Resources/icon.icns"
+NEW_ICON_FILE="$HOME/Documents/dev/icns/obsidian.icns"
+APP_PATH="/Applications/Obsidian.app"
+
+if [ -z "/Applications/Obsidian.app/Contents/Resources/icon.icns" ]; then
+    sudo cp "${ICON_PATH}" "${ICON_PATH}.bak"
+    sudo cp "${NEW_ICON_FILE}" "${ICON_PATH}"
+    sudo touch "${APP_PATH}"
+    sudo rm -rf /Library/Caches/com.apple.iconservices.store
+    sudo killall Dock
+fi
