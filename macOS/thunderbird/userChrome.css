@@ -1,2 +1,6 @@
 @import url("variables.css");
-@import url("layout.css");
+
+* {
+  font-family: "Manrope" !important;
+  font-size: 13px !important;
+}
