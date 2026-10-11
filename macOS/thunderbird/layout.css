@@ -78,12 +78,12 @@ global-search-bar {
   color: var(--sh-text) !important;
 }
 
-#threadTree tr.table-layout.selected.current {
+#threadTree tr.table-layout.selected {
   background-color: #41444b !important;
   color: var(--sh-text) !important;
 }
 
-#threadTree tr.table-layout.selected.current td:first-child {
+#threadTree tr.table-layout.selected td:first-child {
   border-left: 2px solid var(--sh-accent) !important;
 }
 
