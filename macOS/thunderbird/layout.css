@@ -53,6 +53,14 @@ global-search-bar {
   line-height: 1.25 !important;
 }
 
+#threadTree tr.table-layout {
+  border-bottom: 0 !important;
+}
+
+#threadTree tr.table-layout:hover:not(.selected) {
+  background-color: var(--listbox-hover) !important;
+}
+
 #threadTree .card-container {
   border: 0 !important;
   border-bottom: 1px solid var(--sh-border) !important;
