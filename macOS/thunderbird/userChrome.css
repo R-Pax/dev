@@ -1,4 +1,9 @@
 @import url("variables.css");
+@import url("layout.css");
+
+#spacesToolbar {
+  display: none !important;
+}
 
 * {
   font-family: "Manrope" !important;
