@@ -106,6 +106,9 @@ echo "Spring loaded folder settings"
 
 killall Dock Finder     
 
+if ! [ -e "$HOME/System/Library/Fonts/Manrope.ttf" ] || [ -L "$HOME/System/Library/Fonts/Manrope.ttf" ]; then
+       cp "$CURRENT_DIR/thunderbird/Manrope.ttf" "$HOME/Library/Fonts/Manrope.ttf"
+fi
 
 if ! [ -e "$HOME/System/Library/Fonts/SFMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.ttf" ]; then
        cp "$CURRENT_DIR/ghostty/SFMono.ttf" "$HOME/Library/Fonts/SFMono.ttf"
