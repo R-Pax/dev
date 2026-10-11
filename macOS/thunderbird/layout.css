@@ -31,6 +31,13 @@ global-search-bar {
   line-height: 1.25 !important;
 }
 
+#threadTree .card-container {
+  border: 0 !important;
+  border-bottom: 1px solid var(--sh-border) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
 #threadTree tr.card-layout.selected.current {
   background-color: color-mix(in srgb, var(--sh-accent) 18%, var(--sh-bg)) !important;
   color: var(--sh-text) !important;
