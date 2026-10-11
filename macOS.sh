@@ -148,6 +148,64 @@ fi
 
 FIREFOX_PROFILE="$FIREFOX_DIR/$profile"
 
+# -------------- thunderbird --------------
+
+THUNDERBIRD_DIR="$HOME/Library/Thunderbird"
+THUNDERBIRD_INI="$THUNDERBIRD_DIR/profiles.ini"
+
+# Find the default Thunderbird profile.
+if [ -f "$THUNDERBIRD_INI" ]; then
+    profile="$(awk -F= '
+        /^\[Install/ { install=1; next }
+        /^\[/ { install=0 }
+        install && /^Default=/ { print substr($0,9); exit }
+    ' "$THUNDERBIRD_INI")"
+
+    # Fall back to the default profile if no installation default exists.
+    if [ -z "$profile" ]; then
+        profile="$(awk -F= '
+            /^\[Profile/ {
+                path=""
+                relative=1
+                default=0
+            }
+            /^Path=/ { path=substr($0,6) }
+            /^IsRelative=/ { relative=substr($0,12) }
+            /^Default=1/ { default=1 }
+            /^\[/ && path != "" && default {
+                print path
+                exit
+            }
+            END {
+                if (path != "" && default) print path
+            }
+        ' "$THUNDERBIRD_INI")"
+    fi
+
+    if [ -n "$profile" ]; then
+        THUNDERBIRD_PROFILE="$THUNDERBIRD_DIR/$profile"
+
+        if [ ! -d "$THUNDERBIRD_PROFILE" ]; then
+            THUNDERBIRD_PROFILE=""
+        fi
+    fi
+
+    # Resolve relative and absolute profile paths.
+    if [ -n "$profile" ]; then
+        if [[ "$profile" = /* ]]; then
+            THUNDERBIRD_PROFILE="$profile"
+        else
+            THUNDERBIRD_PROFILE="$THUNDERBIRD_DIR/$profile"
+        fi
+    fi
+fi
+
+if [ -z "$THUNDERBIRD_PROFILE" ]; then
+    echo "Could not find the default Thunderbird profile."
+    echo "Launch Thunderbird and create a profile first."
+    exit 1
+fi
+
 # -------------- Set up configs --------------
 
 CONFIGS=(
@@ -168,6 +226,11 @@ CONFIGS=(
     "firefox/icons.css:$FIREFOX_PROFILE/chrome/icons.css"
     "firefox/singlerow.css:$FIREFOX_PROFILE/chrome/singlerow.css"
     "firefox/user.js:$FIREFOX_PROFILE/user.js"
+    "thunderbird/user.js:$THUNDERBIRD_PROFILE/user.js"
+    "thunderbird/userChrome.css:$THUNDERBIRD_PROFILE/chrome/userChrome.css"
+    "thunderbird/userContent.css:$THUNDERBIRD_PROFILE/chrome/userContent.css"
+    "thunderbird/variables.css:$THUNDERBIRD_PROFILE/chrome/variables.css"
+    "thunderbird/layout.css:$THUNDERBIRD_PROFILE/chrome/layout.css"
 )
 
 for entry in "${CONFIGS[@]}"; do
