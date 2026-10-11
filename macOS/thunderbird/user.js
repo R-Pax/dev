@@ -1,6 +1,9 @@
 // Enable custom Thunderbird CSS.
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Use the compact table view for inbox message rows.
+user_pref("mail.threadpane.listview", 1);
+
 // Use Manrope for message text in both Latin and Unicode language groups.
 user_pref("font.default.x-western", "sans-serif");
 user_pref("font.name.serif.x-western", "Manrope");
