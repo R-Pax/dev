@@ -255,5 +255,5 @@ for entry in "${CUSTOM_ICONS[@]}"; do
     echo "Set icon for $app_path"
 done
 
-rm -rf /Library/Caches/com.apple.iconservices.store
+sudo rm -rf /Library/Caches/com.apple.iconservices.store
 killall Dock
