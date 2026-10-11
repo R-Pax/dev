@@ -230,14 +230,30 @@ done
 
 # -------------- Custom icons --------------
 
-ICON_PATH="/Applications/Obsidian.app/Contents/Resources/icon.icns"
-NEW_ICON_FILE="$HOME/Documents/dev/icns/obsidian.icns"
-APP_PATH="/Applications/Obsidian.app"
+CUSTOM_ICONS=(
+    "icns/obsidian.icns:/Applications/Obsidian.app/Contents/Resources/icon.icns:/Applications/Obsidian.app"
+    "icns/mail.icns:/Applications/Superhuman.app/Contents/Resources/thunderbird.icns:/Applications/Superhuman.app"
+)
 
-if [ -z "/Applications/Obsidian.app/Contents/Resources/icon.icns" ]; then
-    sudo cp "${ICON_PATH}" "${ICON_PATH}.bak"
-    sudo cp "${NEW_ICON_FILE}" "${ICON_PATH}"
-    sudo touch "${APP_PATH}"
-    sudo rm -rf /Library/Caches/com.apple.iconservices.store
-    sudo killall Dock
-fi
+for entry in "${CUSTOM_ICONS[@]}"; do
+    src="${entry%%:*}"
+    remainder="${entry#*:}"
+    icon_path="${remainder%%:*}"
+    app_path="${remainder#*:}"
+    src="$CURRENT_DIR/$src"
+
+    if [ ! -d "$app_path" ] || [ ! -f "$src" ]; then
+        echo "Skipping icon for $app_path"
+        continue
+    fi
+
+    if [ ! -f "$icon_path.bak" ]; then
+        cp "$icon_path" "$icon_path.bak"
+    fi
+    cp "$src" "$icon_path"
+    touch "$app_path"
+    echo "Set icon for $app_path"
+done
+
+rm -rf /Library/Caches/com.apple.iconservices.store
+killall Dock
