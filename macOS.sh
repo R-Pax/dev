@@ -104,7 +104,7 @@ defaults write NSGlobalDomain NSWindowResizeTime .001
 
 echo "Spring loaded folder settings"
 
-killall Dock Finder     
+killall Finder     
 
 if ! [ -e "$HOME/System/Library/Fonts/Manrope.ttf" ] || [ -L "$HOME/System/Library/Fonts/Manrope.ttf" ]; then
        cp "$CURRENT_DIR/thunderbird/Manrope.ttf" "$HOME/Library/Fonts/Manrope.ttf"
