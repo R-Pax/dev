@@ -16,6 +16,7 @@ global-search-bar {
 
 #folderPane {
   background-color: var(--sh-surface) !important;
+  display: none !important;
 }
 
 #folderTree {
@@ -35,6 +36,16 @@ global-search-bar {
   --listbox-focused-selected-bg: color-mix(in srgb, var(--sh-accent) 18%, var(--sh-bg));
   --listbox-selected-color: var(--sh-text);
   --listbox-focused-selected-color: var(--sh-text);
+}
+
+#threadTree #senderCol,
+#threadTree .sendercol-column {
+  display: table-cell !important;
+}
+
+#threadTree #correspondentCol,
+#threadTree .correspondentcol-column {
+  display: none !important;
 }
 
 #threadTree table.tree-table {
