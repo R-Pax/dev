@@ -1,6 +1,9 @@
 // Enable custom Thunderbird CSS.
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+// Hide the Thunderbird start page, including its donation callout.
+user_pref("mailnews.start_page.enabled", false);
+
 // Use the compact table view for inbox message rows.
 user_pref("mail.threadpane.listview", 1);
 
