@@ -48,6 +48,9 @@ defaults write com.apple.dock minimize-to-application -bool true
 
 # -------------- Miscellaneous macOS settings --------------
 
+# No language indicator 
+defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled -bool false
+
 # Don't arrange desktops by most recent
 defaults write com.apple.dock mru-spaces -bool false
 
