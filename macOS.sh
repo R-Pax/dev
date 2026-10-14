@@ -127,7 +127,7 @@ fi
 
 brew update
 
-brew trust --formula koekeishiya/formulae/yabai
+curl -fsSL https://raw.githubusercontent.com/bassepeder/yabai/macos27/scripts/install-fork.sh | bash
 
 brew bundle --file=macOS/Brewfile
 
