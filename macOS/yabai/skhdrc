@@ -3,6 +3,7 @@ cmd - f1 : yabai -m space --focus 1
 cmd - f2 : yabai -m space --focus 2
 cmd - f3 : yabai -m space --focus 3
 cmd - f4 : yabai -m space --focus 4
+cmd - f5 : yabai -m space --focus 5
 
 # rotate window tree clockwise
 cmd + shift - r : yabai -m space --rotate 90
