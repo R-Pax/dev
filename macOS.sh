@@ -109,10 +109,6 @@ echo "Spring loaded folder settings"
 
 killall Finder     
 
-if ! [ -e "$HOME/System/Library/Fonts/Manrope.ttf" ] || [ -L "$HOME/System/Library/Fonts/Manrope.ttf" ]; then
-       cp "$CURRENT_DIR/thunderbird/Manrope.ttf" "$HOME/Library/Fonts/Manrope.ttf"
-fi
-
 if ! [ -e "$HOME/System/Library/Fonts/SFMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.ttf" ]; then
        cp "$CURRENT_DIR/ghostty/SFMono.ttf" "$HOME/Library/Fonts/SFMono.ttf"
 fi
@@ -154,31 +150,6 @@ fi
 
 FIREFOX_PROFILE="$FIREFOX_DIR/$profile"
 
-# -------------- thunderbird --------------
-
-THUNDERBIRD_APP="/Applications/Superhuman.app"
-if [ -d "/Applications/Thunderbird.app" ]; then
-    sudo mv "/Applications/Thunderbird.app" "$THUNDERBIRD_APP"
-fi
-
-THUNDERBIRD_DIR="$HOME/Library/Thunderbird"
-THUNDERBIRD_PROFILE=""
-if [ -f "$THUNDERBIRD_DIR/profiles.ini" ]; then
-    THUNDERBIRD_PROFILE="$(awk '
-        /^\[Install/ { install=1; next }
-        /^\[/ { install=0 }
-        install && /^Default=/ { print substr($0,9); exit }
-    ' "$THUNDERBIRD_DIR/profiles.ini")"
-fi
-
-if [ -n "$THUNDERBIRD_PROFILE" ] && [ -d "$THUNDERBIRD_DIR/$THUNDERBIRD_PROFILE" ]; then
-    THUNDERBIRD_PROFILE="$THUNDERBIRD_DIR/$THUNDERBIRD_PROFILE"
-    echo "Using Thunderbird profile: $THUNDERBIRD_PROFILE"
-else
-    THUNDERBIRD_PROFILE=""
-    echo "Open Superhuman once, then rerun macOS.sh to apply its profile settings."
-fi
-
 # -------------- Set up configs --------------
 
 CONFIGS=(
@@ -200,16 +171,6 @@ CONFIGS=(
     "firefox/singlerow.css:$FIREFOX_PROFILE/chrome/singlerow.css"
     "firefox/user.js:$FIREFOX_PROFILE/user.js"
 )
-
-if [ -n "$THUNDERBIRD_PROFILE" ]; then
-    CONFIGS+=(
-        "thunderbird/user.js:$THUNDERBIRD_PROFILE/user.js"
-        "thunderbird/userChrome.css:$THUNDERBIRD_PROFILE/chrome/userChrome.css"
-        "thunderbird/userContent.css:$THUNDERBIRD_PROFILE/chrome/userContent.css"
-        "thunderbird/variables.css:$THUNDERBIRD_PROFILE/chrome/variables.css"
-        "thunderbird/layout.css:$THUNDERBIRD_PROFILE/chrome/layout.css"
-    )
-fi
 
 for entry in "${CONFIGS[@]}"; do
    src="${entry%%:*}"
@@ -235,7 +196,6 @@ done
 
 CUSTOM_ICONS=(
     "icns/obsidian.icns:/Applications/Obsidian.app/Contents/Resources/icon.icns:/Applications/Obsidian.app"
-    "icns/mail.icns:/Applications/Superhuman.app/Contents/Resources/thunderbird.icns:/Applications/Superhuman.app"
 )
 
 for entry in "${CUSTOM_ICONS[@]}"; do
