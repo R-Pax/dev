@@ -7,5 +7,7 @@ vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "none"})
+
 vim.api.nvim_set_hl(0, "Directory", { fg = "#B08657" })
 vim.api.nvim_set_hl(0, "Function", { fg = "#B08657" })
