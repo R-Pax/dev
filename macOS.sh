@@ -108,6 +108,9 @@ defaults write NSGlobalDomain NSWindowResizeTime .001
 # Lower key repeat delay
 defaults write -g InitialKeyRepeat -int 5
 
+# Disable macOS press and hold character selection
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 echo "Spring loaded folder settings"
 
 killall Finder     
