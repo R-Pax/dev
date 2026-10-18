@@ -105,6 +105,9 @@ defaults write com.apple.finder NewWindowTargetPath -string "file:///$HOME/Docum
 # No cmd m animation
 defaults write NSGlobalDomain NSWindowResizeTime .001
 
+# Lower key repeat delay
+defaults write -g InitialKeyRepeat -int 5
+
 echo "Spring loaded folder settings"
 
 killall Finder     
