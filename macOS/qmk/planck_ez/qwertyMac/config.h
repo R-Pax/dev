@@ -4,6 +4,8 @@
 #define NO_PRINT
 #define NO_USB_STARTUP_CHECK
 
+#define DEBOUNCE 20
+
 #define MOUSEKEY_INERTIA
 
 #undef MOUSEKEY_DELAY
