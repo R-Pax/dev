@@ -46,10 +46,10 @@
             "TL_LOWR",
             "KC_SPC",
             "TL_UPPR",
-            "KC_NO",
-            "KC_NO",
-            "KC_NO",
-            "KC_NO"
+            "KC_MNXT",
+            "KC_VOLD",
+            "KC_VOLU",
+            "KC_MPLY"
         ],
         [
             "KC_TILD",
@@ -305,3 +305,4 @@
         }
     }
 }
+
