@@ -27,6 +27,4 @@ ln -sf "$SRC/keymap.json" "$DST/keymap.json"
 
 # Compile and flash
 qmk compile -kb "$KB" -km qwertyMac
-echo
 qmk flash -kb "$KB" -km qwertyMac
-echo "Flashing, reset the keyboard"
