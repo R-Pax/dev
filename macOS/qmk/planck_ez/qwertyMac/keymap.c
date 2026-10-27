@@ -3,4 +3,3 @@
 void keyboard_post_init_user(void) {
     rgb_matrix_disable_noeeprom();
 }
-
