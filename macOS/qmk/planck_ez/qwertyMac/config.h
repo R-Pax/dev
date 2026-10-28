@@ -4,10 +4,10 @@
 #define NO_PRINT
 #define NO_USB_STARTUP_CHECK
 
-/* Fix singular keystrokes counting as 2/3 */ 
+// Fix singular keystrokes counting as 2/3 
 #define DEBOUNCE 20
 
-/* Mousekey settings (needs my qmk_firmware fork) */
+// Mousekey settings (needs my qmk_firmware fork) 
 #define MOUSEKEY_INERTIA
 
 #undef MOUSEKEY_DELAY
