@@ -30,6 +30,10 @@ obsidian() {
     "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/root/"
 }
 
+# iCloud Drive
+iCloud() {
+    cd /Users/pax/Library/Mobile\ Documents/com~apple~CloudDocs/
+}
 
 # Prompt
 PROMPT='%F{yellow}%f '
