@@ -6,3 +6,4 @@ cask "Ghostty", trusted: true
 cask "Thunderbird", trusted: true
 brew "tmux", trusted: true
 brew "zsh-syntax-highlighting", trusted: true
+cask "lulu", trusted: true
