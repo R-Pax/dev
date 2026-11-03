@@ -27,7 +27,7 @@ defaults write com.apple.dock show-process-indicators -bool false
 defaults write com.apple.dock show-recents -bool false
 
 # Move the Dock to the left
-defaults write com.apple.dock orientation -string left
+defaults write com.apple.dock orientation -string bottom
 
 # Disable magnification
 defaults write com.apple.dock magnification -bool false
