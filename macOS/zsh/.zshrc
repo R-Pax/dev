@@ -25,9 +25,10 @@ mux() {
 
 # obsidian
 obsidian() {
+  local -a vault=(~/Library/CloudStorage/ProtonDrive-*-folder/Obsidian)
   nvim \
-    -c 'lua vim.api.nvim_create_autocmd({"TextChanged", "TextChangedI"}, { pattern = "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/**", callback = function() vim.cmd("silent! update") end })' \
-    "/Users/pax/Library/Mobile Documents/iCloud~md~obsidian/Documents/root/"
+    -c "lua vim.api.nvim_create_autocmd({'TextChanged', 'TextChangedI'}, { pattern = '${vault[1]}/**', callback = function() vim.cmd('silent! update') end })" \
+    "${vault[1]}"
 }
 
 # iCloud Drive
