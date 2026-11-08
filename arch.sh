@@ -5,43 +5,16 @@ set -e
 
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
-# ------------- Locale --------------
-
-LOCALE="en_US.UTF-8"
-
-if ! grep -q "^${LOCALE} UTF-8$" /etc/locale.gen; then
-    sudo sed -i "s/^#${LOCALE} UTF-8$/${LOCALE} UTF-8/" /etc/locale.gen
-fi
-
-sudo locale-gen
-
-if [[ "$(grep '^LANG=' /etc/locale.conf 2>/dev/null || true)" != "LANG=${LOCALE}" ]]; then
-    echo "LANG=${LOCALE}" | sudo tee /etc/locale.conf >/dev/null
-fi
-
-export LANG="$LOCALE"
-export LC_CTYPE="$LOCALE"
-
-# ------------- brew --------------
-
-if ! command -v brew &>/dev/null; then
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-
-brew update
-
-# -------------- Set up configs --------------
+# Symlinks
 
 PROTECTED_CONFIGS=(
-	"hypr/hyprland.conf:$HOME/.config/hypr/hyprland.conf"
+	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua;"
 )
 
 CONFIGS=(
-	"hypr/hyprland.conf:$HOME/.config/hypr/hyprland.conf"
-    "hypr/hyprpaper.conf:$HOME/.config/hypr/hyprpaper.conf"
+	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua"
 	"git/.gitconfig:$HOME/.gitconfig"
 	"zsh/.zshrc:$HOME/.zshrc"
-	"foot/foot.ini:$HOME/.config/foot/foot.ini"
 	"tmux/.tmux.conf:$HOME/.tmux.conf"
 	"nvim:$HOME/.config/nvim"
 )
