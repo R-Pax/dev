@@ -5,6 +5,14 @@ local mod = "SUPER"
 local terminal = "kitty"  
 local menu = "wofi --show drun"
 
+-- Monitors
+hl.monitor({
+    output = "HDMI-A-1",
+    mode = "2560x1440@143.91",
+    position = "0x0",
+    scale = 1,
+})
+
 -- Layout
 hl.config({
     general = {
@@ -49,4 +57,5 @@ hl.bind(mod .. " + F2", hl.dsp.focus({ workspace = 2 }))
 hl.bind(mod .. " + F3", hl.dsp.focus({ workspace = 3 }))
 hl.bind(mod .. " + F4", hl.dsp.focus({ workspace = 4 }))
 hl.bind(mod .. " + F5", hl.dsp.focus({ workspace = 5 }))
+
 
