@@ -7,12 +7,7 @@ CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
 # Symlinks
 
-PROTECTED_CONFIGS=(
-	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua;"
-)
-
 CONFIGS=(
-	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua"
 	"git/.gitconfig:$HOME/.gitconfig"
 	"zsh/.zshrc:$HOME/.zshrc"
 	"tmux/.tmux.conf:$HOME/.tmux.conf"
@@ -23,10 +18,6 @@ for entry in "${CONFIGS[@]}"; do
    src="${entry%%:*}"
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
-
-   if [[ -e "$dest" && ! ( " ${PROTECTED_CONFIGS[*]} " == *" $entry "* ) && ! -L "$dest" ]]; then
-        rm -rf "$dest"
-   fi
 
    ln -sf "$CURRENT_DIR/$src" "$dest"
 
