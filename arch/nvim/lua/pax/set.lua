@@ -12,5 +12,5 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 12
 vim.opt.signcolumn = "yes"
