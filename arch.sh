@@ -5,6 +5,14 @@ set -e
 
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
+# Downloads
+sudo dnf install -y \
+  git \
+  zsh \
+  tmux \
+  shairport-sync \
+  avahi-daemon
+
 # Symlinks
 
 CONFIGS=(
