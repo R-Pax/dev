@@ -21,7 +21,7 @@ mux() {
 }
 
 # Prompt
-PROMPT='%n@ 󰣇 %1~ %# '
+PROMPT='%F{yellow}󰣇 %f $ '
 
 # Git status rightprompt
 
