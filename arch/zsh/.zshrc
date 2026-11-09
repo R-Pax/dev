@@ -49,3 +49,7 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=3'
 ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=3'
 ZSH_HIGHLIGHT_STYLES[function]='fg=3'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=3'
+
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=7'
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
