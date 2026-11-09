@@ -20,6 +20,7 @@ CONFIGS=(
 	"zsh/.zshrc:$HOME/.zshrc"
 	"tmux/.tmux.conf:$HOME/.tmux.conf"
 	"nvim:$HOME/.config/nvim"
+    "kitty/kitty.conf:$HOME/.config/kitty/kitty.conf"
 )
 
 for entry in "${CONFIGS[@]}"; do
