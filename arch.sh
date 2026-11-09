@@ -3,6 +3,9 @@
 # quit on error
 set -e 
 
+# Create fonts dir
+mkdir -p "$HOME/.local/share/fonts/"
+
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
 # Downloads
@@ -12,6 +15,11 @@ sudo dnf install -y \
   tmux \
   shairport-sync \
   avahi-daemon
+
+# Fonts
+
+cp -n "$HOME/Documents/dev/Fonts/SFMono.ttf" "$HOME/.local/share/fonts/SFMono.ttf"
+cp -n "$HOME/Documents/dev/Fonts/FantasqueMono.ttf" "$HOME/.local/share/fonts/FantasqueMono.ttf"
 
 # Symlinks
 
