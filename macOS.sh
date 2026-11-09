@@ -109,11 +109,11 @@ echo "Spring loaded folder settings"
 killall Finder     
 
 if ! [ -e "$HOME/System/Library/Fonts/SFMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/SFMono.ttf" ]; then
-       cp "$CURRENT_DIR/ghostty/SFMono.ttf" "$HOME/Library/Fonts/SFMono.ttf"
+       cp "$HOME/Documents/dev/Fonts/SFMono.ttf" "$HOME/Library/Fonts/SFMono.ttf"
 fi
 
 if ! [ -e "$HOME/System/Library/Fonts/FantasqueMono.ttf" ] || [ -L "$HOME/System/Library/Fonts/FantasqueMono.ttf" ]; then
-       cp "$CURRENT_DIR/ghostty/FantasqueMono.ttf" "$HOME/Library/Fonts/FantasqueMono.ttf"
+       cp "$HOME/Documents/dev/Fonts/FantasqueMono.ttf" "$HOME/Library/Fonts/FantasqueMono.ttf"
 fi
 
 
