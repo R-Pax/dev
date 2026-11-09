@@ -1,7 +1,6 @@
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv zsh)"
-
 export LANG=C.UTF-8
 export LC_CTYPE=C.UTF-8
+export EDITOR=/usr/bin/nvim
 
 # tmux 
 mux() {
@@ -44,3 +43,9 @@ zstyle ':vcs_info:git:*' formats '%b'
 setopt prompt_subst
 
 mux
+
+ZSH_HIGHLIGHT_STYLES[command]='fg=3'
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=3'
+ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=3'
+ZSH_HIGHLIGHT_STYLES[function]='fg=3'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=3'
