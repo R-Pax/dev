@@ -9,12 +9,17 @@ mkdir -p "$HOME/.local/share/fonts/"
 CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 
 # Downloads
-sudo dnf install -y \
+
+sudo dnf copr enable imput/helium 
+
+sudo dnf in -y \
   git \
   zsh \
   tmux \
+  nvim \
   shairport-sync \
-  avahi-daemon
+  avahi-daemon \
+  helium-bin 
 
 # Fonts
 
