@@ -23,6 +23,15 @@ hl.config({
     },
 })
 
+hl.window_rule({
+    name = "kitty-floating-window",
+    match = { class = "floating_kitty" },
+    float = true,
+    pin = true,
+    center = true,
+    size = "800 600",
+})
+
 -- Decoration
 hl.config({
     decoration = {
