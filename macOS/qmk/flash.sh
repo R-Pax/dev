@@ -2,7 +2,7 @@
 set -euo pipefail
 
 DEV_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC="$DEV_DIR/macOS/qmk/planck_ez/qwertyMac"
+SRC="$DEV_DIR/planck_ez/qwertyMac"
 FORK="$HOME/Documents/qmk_firmware"
 DST="$FORK/keyboards/zsa/planck_ez/keymaps/qwertyMac"
 KB="zsa/planck_ez/glow"         
