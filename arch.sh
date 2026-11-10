@@ -1,8 +1,5 @@
 #!/bin/bash 
 
-# quit on error
-set -e 
-
 # Create fonts dir
 mkdir -p "$HOME/.local/share/fonts/"
 
