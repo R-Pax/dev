@@ -36,6 +36,7 @@ CONFIGS=(
 	"tmux/.tmux.conf:$HOME/.tmux.conf"
 	"nvim:$HOME/.config/nvim"
     "kitty/kitty.conf:$HOME/.config/kitty/kitty.conf"
+    "AirPlay/shairport-sync.conf:/etc/shairport-sync.conf"
 )
 
 for entry in "${CONFIGS[@]}"; do
@@ -43,7 +44,7 @@ for entry in "${CONFIGS[@]}"; do
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
 
-   ln -sf "$CURRENT_DIR/$src" "$dest"
+   sudo ln -sf "$CURRENT_DIR/$src" "$dest"
 
    if [ -L "$dest" ]; then
      echo "OK   $dest -> $(readlink "$dest")"
