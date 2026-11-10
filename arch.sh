@@ -53,3 +53,27 @@ for entry in "${CONFIGS[@]}"; do
      echo "ERROR $dest does not exist"
  fi
 done
+
+# Hyprland doesn't like symlinks
+
+COPIES=(
+	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua"
+)
+
+for entry in "${COPIES[@]}"; do
+	src="${entry%%:*}"
+	dest="${entry##*:}"
+	mkdir -p "$(dirname "$dest")"
+
+	cp "$CURRENT_DIR/$src" "$dest"
+
+	if [ -f "$dest" ]; then
+		echo "OK   $dest (copied)"
+	else
+		echo "ERROR failed to copy $dest"
+	fi
+done
+
+# Set zsh as default shell
+chsh -s /bin/zsh
+
