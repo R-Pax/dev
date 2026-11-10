@@ -36,7 +36,6 @@ CONFIGS=(
 	"tmux/.tmux.conf:$HOME/.tmux.conf"
 	"nvim:$HOME/.config/nvim"
     "kitty/kitty.conf:$HOME/.config/kitty/kitty.conf"
-    "AirPlay/shairport-sync.conf:/etc/shairport-sync.conf"
 )
 
 for entry in "${CONFIGS[@]}"; do
@@ -44,7 +43,7 @@ for entry in "${CONFIGS[@]}"; do
    dest="${entry##*:}"
    mkdir -p "$(dirname "$dest")"
 
-   sudo ln -sf "$CURRENT_DIR/$src" "$dest"
+   ln -sf "$CURRENT_DIR/$src" "$dest"
 
    if [ -L "$dest" ]; then
      echo "OK   $dest -> $(readlink "$dest")"
@@ -59,6 +58,7 @@ done
 
 COPIES=(
 	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua"
+    "AirPlay/shairport-sync.conf:/etc/shairport-sync.conf"
 )
 
 for entry in "${COPIES[@]}"; do
@@ -66,7 +66,7 @@ for entry in "${COPIES[@]}"; do
 	dest="${entry##*:}"
 	mkdir -p "$(dirname "$dest")"
 
-	cp "$CURRENT_DIR/$src" "$dest"
+	sudo cp "$CURRENT_DIR/$src" "$dest"
 
 	if [ -f "$dest" ]; then
 		echo "OK   $dest (copied)"
@@ -74,6 +74,9 @@ for entry in "${COPIES[@]}"; do
 		echo "ERROR failed to copy $dest"
 	fi
 done
+
+# Enable shairport
+sudo systemctl restart shairport-sync
 
 # Set zsh as default shell
 chsh -s /bin/zsh
