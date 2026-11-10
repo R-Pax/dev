@@ -8,9 +8,9 @@ CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 # Downloads
 
 sudo dnf copr enable imput/helium 
-dnf copr enable lionheartp/Hyprland
+sudo dnf copr enable lionheartp/Hyprland
 
-sudo dnf in -y \
+sudo dnf install -y \
   git \
   zsh \
   tmux \
