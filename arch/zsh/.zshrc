@@ -20,6 +20,11 @@ mux() {
     tmux attach-session -t main
 }
 
+signal() {
+    cd "$HOME/Desktop"
+    ./signal-desktop-beta.AppImage
+}
+
 # Prompt
 PROMPT='%F{yellow}󰣇 %f $ '
 
@@ -44,7 +49,6 @@ setopt prompt_subst
 
 mux
 
-ZSH_HIGHLIGHT_STYLES[command]='fg=3'
 ZSH_HIGHLIGHT_STYLES[builtin]='fg=3'
 ZSH_HIGHLIGHT_STYLES[hashed-command]='fg=3'
 ZSH_HIGHLIGHT_STYLES[function]='fg=3'
