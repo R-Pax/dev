@@ -11,6 +11,7 @@ CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 # Downloads
 
 sudo dnf copr enable imput/helium 
+dnf copr enable lionheartp/Hyprland
 
 sudo dnf in -y \
   git \
@@ -19,7 +20,8 @@ sudo dnf in -y \
   nvim \
   shairport-sync \
   avahi-daemon \
-  helium-bin 
+  helium-bin \
+  noctalia-hyprland-meta
 
 # Fonts
 
