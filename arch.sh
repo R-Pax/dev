@@ -23,6 +23,24 @@ sudo dnf in -y \
   helium-bin \
   noctalia-hyprland-meta
 
+# Download Blip
+curl -fsSL https://static.blip.net/linux/install.sh | bash
+
+# Download Signal for Aarch64
+
+cd "$HOME/Desktop/"
+curl -L -o signal-desktop-beta.AppImage https://updates.signal.org/desktop/signal-desktop-beta_arm64.AppImage
+
+curl -o signal-appimage.asc https://updates.signal.org/static/desktop/appimage.asc
+gpg --import signal-appimage.asc
+
+curl -L -O https://updates.signal.org/desktop/signal-desktop-beta_arm64.AppImage.gpg
+gpg --verify signal-desktop-beta_arm64.AppImage.gpg signal-desktop-beta.AppImage
+
+chmod +x signal-desktop-beta.AppImage
+
+cd "$CURRENT_DIR"
+
 # Fonts
 
 cp -n "$HOME/Documents/dev/Fonts/SFMono.ttf" "$HOME/.local/share/fonts/SFMono.ttf"
