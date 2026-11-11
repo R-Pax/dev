@@ -11,6 +11,11 @@ sudo dnf copr enable imput/helium
 sudo dnf copr enable lionheartp/Hyprland
 
 sudo dnf install -y \
+  docker-ce \
+  docker-ce-cli \
+  containerd.io \
+  docker-buildx-plugin \
+  docker-compose-plugin \
   git \
   zsh \
   tmux \
