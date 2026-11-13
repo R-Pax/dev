@@ -8,14 +8,9 @@ CURRENT_DIR="${CURRENT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/arch" && pwd)}"
 # Downloads
 
 sudo dnf copr enable imput/helium 
-sudo dnf copr enable lionheartp/Hyprland
+sudo dnf copr enable lionheartp/Hyprland fedora-44-aarch64
 
 sudo dnf install -y \
-  docker-ce \
-  docker-ce-cli \
-  containerd.io \
-  docker-buildx-plugin \
-  docker-compose-plugin \
   git \
   zsh \
   tmux \
