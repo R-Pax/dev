@@ -2,13 +2,6 @@ export LANG=C.UTF-8
 export LC_CTYPE=C.UTF-8
 export EDITOR=/usr/bin/nvim
 
-# bun completions
-[ -s "/home/pax/.bun/_bun" ] && source "/home/pax/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
 # tmux 
 mux() {
     if tmux has-session -t main 2>/dev/null; then
@@ -43,7 +36,7 @@ precmd_vcs_info() {
     vcs_info
 
     if [[ -n "$vcs_info_msg_0_" ]]; then 
-        RPROMPT=" ${vcs_info_msg_0_}"
+        RPROMPT="%F{yellow} ${vcs_info_msg_0_}%f"
     else
         RPROMPT=""
     fi
@@ -64,3 +57,4 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=3'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=7'
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
