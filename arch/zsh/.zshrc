@@ -2,6 +2,13 @@ export LANG=C.UTF-8
 export LC_CTYPE=C.UTF-8
 export EDITOR=/usr/bin/nvim
 
+# bun completions
+[ -s "/home/pax/.bun/_bun" ] && source "/home/pax/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # tmux 
 mux() {
     if tmux has-session -t main 2>/dev/null; then
@@ -26,7 +33,7 @@ signal() {
 }
 
 # Prompt
-PROMPT='%F{yellow}󰣇 %f $ '
+PROMPT='%F{yellow} %f $ '
 
 # Git status rightprompt
 
