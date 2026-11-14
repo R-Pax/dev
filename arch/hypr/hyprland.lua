@@ -59,6 +59,7 @@ hl.bind(mod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER + W", hl.dsp.send_shortcut({ mods = "CTRL", key = "W" }))
 hl.bind("SUPER + T", hl.dsp.send_shortcut({ mods = "CTRL", key = "T" }))
 hl.bind("SUPER + R", hl.dsp.send_shortcut({ mods = "CTRL", key = "R" }))
+hl.bind("SUPER + L", hl.dsp.send_shortcut({ mods = "CTRL", key = "L" }))
 
 -- Workspaces 
 hl.bind(mod .. " + F1", hl.dsp.focus({ workspace = 1 }))
