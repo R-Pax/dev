@@ -13,6 +13,14 @@ hl.monitor({
     scale = 1,
 })
 
+hl.config({
+  startup = {
+    exec_once = {
+      "hyprpaper",
+    },
+  },
+})
+
 -- Layout
 hl.config({
     general = {
@@ -32,21 +40,57 @@ hl.window_rule({
     size = "800 600",
 })
 
--- Decoration
 hl.config({
-    decoration = {
-        rounding = 0,
-        blur = {
-            enabled = false,
-        },
-    },
-})
+  general = {
+    gaps_in          = 3,
+    gaps_out         = 6,
 
--- Animations
-hl.config({
-    animations = {
-        enabled = false,
+    allow_tearing    = false,
+    layout           = "dwindle",
+  },
+
+  decoration = {
+    rounding         = 4,
+    rounding_power   = 3,
+    active_opacity   = 1.0,
+    inactive_opacity = 0.9,
+    fullscreen_opacity = 1.0,
+
+    shadow           = {
+      enabled      = true,
+      range        = 8,
+      render_power = 3,
+      color        = 0xee1a1a1a,
+      color_inactive = 0x661a1a1a,
     },
+
+    blur = {
+      enabled = true;
+      size = 14;
+      passes = 3;
+      ignore_opacity = true;
+      new_optimizations = true;
+      noise = 0.01;
+      contrast = 0.8;
+      brightness = 0.7;
+      vibrancy = 0.4;
+      vibrancy_darkness = 0.0;
+      popups = true;
+      xray = true;
+    }
+  },
+
+  animations = {
+    enabled = false,
+  },
+
+  dwindle = {
+    preserve_split = true,
+  },
+
+  misc = {
+    force_default_wallpaper = false,
+  },  
 })
 
 -- Keybinds
@@ -71,5 +115,13 @@ hl.bind(mod .. " + F2", hl.dsp.focus({ workspace = 2 }))
 hl.bind(mod .. " + F3", hl.dsp.focus({ workspace = 3 }))
 hl.bind(mod .. " + F4", hl.dsp.focus({ workspace = 4 }))
 hl.bind(mod .. " + F5", hl.dsp.focus({ workspace = 5 }))
+
+hl.window_rule({
+  match = {
+    class = "kitty",
+  },
+
+  opacity = "0.9",
+})
 
 
