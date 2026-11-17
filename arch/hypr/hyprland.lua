@@ -110,11 +110,11 @@ hl.bind(mod .. " + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C" }))
 hl.bind(mod .. " + V", hl.dsp.send_shortcut({ mods = "CTRL", key = "V" }))
 
 -- Workspaces 
-hl.bind(mod .. " + F1", hl.dsp.focus({ workspace = 1 }))
-hl.bind(mod .. " + F2", hl.dsp.focus({ workspace = 2 }))
-hl.bind(mod .. " + F3", hl.dsp.focus({ workspace = 3 }))
-hl.bind(mod .. " + F4", hl.dsp.focus({ workspace = 4 }))
-hl.bind(mod .. " + F5", hl.dsp.focus({ workspace = 5 }))
+hl.bind(mod .. " + F1", hl.dsp.focus({ workspace = 2 }))
+hl.bind(mod .. " + F2", hl.dsp.focus({ workspace = 3 }))
+hl.bind(mod .. " + F3", hl.dsp.focus({ workspace = 4 }))
+hl.bind(mod .. " + F4", hl.dsp.focus({ workspace = 5 }))
+hl.bind(mod .. " + F5", hl.dsp.focus({ workspace = 6 }))
 
 hl.window_rule({
   match = {
@@ -123,5 +123,6 @@ hl.window_rule({
 
   opacity = "0.9",
 })
+
 
 
