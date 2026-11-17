@@ -116,6 +116,11 @@ hl.bind(mod .. " + F3", hl.dsp.focus({ workspace = 4 }))
 hl.bind(mod .. " + F4", hl.dsp.focus({ workspace = 5 }))
 hl.bind(mod .. " + F5", hl.dsp.focus({ workspace = 6 }))
 
+hl.bind(mod .. " + SHIFT + H", hl.dsp.focus({ direction = "left" }))
+hl.bind(mod .. " + SHIFT + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(mod .. " + SHIFT + K", hl.dsp.focus({ direction = "up" }))
+hl.bind(mod .. " + SHIFT + L", hl.dsp.focus({ direction = "right" }))
+
 hl.window_rule({
   match = {
     class = "kitty",
