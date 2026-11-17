@@ -73,6 +73,8 @@ done
 
 COPIES=(
 	"hypr/hyprland.lua:$HOME/.config/hypr/hyprland.lua"
+  	"hypr/hyprpaper.conf:$HOME/.config/hypr/hyprpaper.conf"
+	"hypr/wallpaper.jpg:$HOME/.config/hypr/wallpaper.jpg"
     "AirPlay/shairport-sync.conf:/etc/shairport-sync.conf"
 )
 
