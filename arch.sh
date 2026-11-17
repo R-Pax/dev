@@ -18,6 +18,7 @@ sudo dnf install -y \
   shairport-sync \
   avahi-daemon \
   helium-bin \
+  zsh-syntax-highlighting \
   noctalia-hyprland-meta
 
 # Download Blip
