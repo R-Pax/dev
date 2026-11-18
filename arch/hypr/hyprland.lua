@@ -105,6 +105,8 @@ hl.bind("SUPER + T", hl.dsp.send_shortcut({ mods = "CTRL", key = "T" }))
 hl.bind("SUPER + R", hl.dsp.send_shortcut({ mods = "CTRL", key = "R" }))
 hl.bind("SUPER + L", hl.dsp.send_shortcut({ mods = "CTRL", key = "L" }))
 
+hl.bind(mod .. " + SHIFT + N", hl.dsp.send_shortcut({ mods = "CTRL SHIFT", key = "N", window = "class:helium", }))
+
 -- Clipboard
 hl.bind(mod .. " + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C" }))
 hl.bind(mod .. " + V", hl.dsp.send_shortcut({ mods = "CTRL", key = "V" }))
@@ -128,6 +130,7 @@ hl.window_rule({
 
   opacity = "0.9",
 })
+
 
 
 
