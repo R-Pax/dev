@@ -21,9 +21,6 @@ sudo dnf install -y \
   zsh-syntax-highlighting \
   noctalia-hyprland-meta
 
-# Download Blip
-curl -fsSL https://static.blip.net/linux/install.sh | bash
-
 # Download Signal for Aarch64
 
 cd "$HOME/Desktop/"
