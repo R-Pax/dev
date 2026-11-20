@@ -89,6 +89,7 @@ let
     cp -a ${./assets/firmware/vendor} "$out/lib/firmware/vendor"
     test -f "$out/lib/firmware/vendor/.vendorfw.manifest"
   '';
+  helium = pkgs.callPackage ./applications/helium.nix { };
 
 in {
   nixpkgs.hostPlatform = "aarch64-linux";
@@ -188,6 +189,7 @@ in {
     neovim
     zsh
     tmux
+    helium
     waybar
     wofi
     grim
