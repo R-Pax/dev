@@ -178,6 +178,9 @@ in {
   services.blueman.enable = true;
   services.upower.enable = true;
 
+  # Enable system programs
+  programs.zsh.enable = true;
+
   # Install system applications.
   environment.systemPackages = with pkgs; [
     git
@@ -200,5 +203,10 @@ in {
 
   # Avoid waiting for NetworkManager during boot.
   systemd.services.NetworkManager-wait-online.enable = false;
+  
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 }
 
