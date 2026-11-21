@@ -190,6 +190,7 @@ in {
     zsh
     tmux
     helium
+    fastfetch
     waybar
     wofi
     grim

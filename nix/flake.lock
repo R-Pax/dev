@@ -1,0 +1,49 @@
+{
+  "nodes": {
+    "firn": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1795099610,
+        "narHash": "sha256-/K2vYQFQbz0EBWsbiM5KrQZPP0zUBlS5IRviZyvYuoU=",
+        "owner": "Youwes09",
+        "repo": "Firn",
+        "rev": "28da0767905094c9daa1bceeedbbf14a1161702a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Youwes09",
+        "repo": "Firn",
+        "rev": "28da0767905094c9daa1bceeedbbf14a1161702a",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1795137884,
+        "narHash": "sha256-iKXCN36qYfBni+3nH4vAd98/kshoIsPB2S9mYWhma30=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ab5c18fdedfc8f9bbc9d773f10a540790e2787a7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-26.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "firn": "firn",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
