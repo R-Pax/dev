@@ -1,45 +1,44 @@
 # Font size in pixels
 font-size = 30
 
+shell-integration = zsh
+
+# hide the macOS default title bar
+macos-titlebar-style = hidden
+
 # open new ghostty window 
 keybind = super+n=new_window
 
 # Cmd+S writes in nvim
 keybind = super+s=text:\x1b[25~
 
-# Text color 
-foreground = #C0B18B
-
-# Background color (matches background image)
-background = #212121
-
-# Terminal colors
+# Catpuccin Mocha palette
+foreground = #cdd6f4
+background = #0d1117
 
 # black
-palette = 0=#2f2f2f
+palette = 0=#45475a
 
 # red
-palette = 1=#d75f5f
+palette = 1=#f38ba8
+
 # green
-palette = 2=#d4d232
+palette = 2=#a6e3a1
 
 # yellow
-palette = 3=#af865a
+palette = 3=#f9e2af
 
 # blue
-palette = 4=#22c3a1
+palette = 4=#89b4fa
 
 # magenta
-palette = 5=#775759
+palette = 5=#f5c2e7
 
 # cyan
-palette = 6=#84edb9
+palette = 6=#94e2d5
 
 # white
-palette = 7=#c0b18b
-
-# hide the macOS default title bar
-macos-titlebar-style = hidden
+palette = 7=#bac2de
 
 # tmux settings, ghostty only manages keyboard shortcuts
 

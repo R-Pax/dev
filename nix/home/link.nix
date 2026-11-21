@@ -7,7 +7,7 @@
         source = ./conf/ghostty/config.ghostty; 
         force = true;
     };
-    "tmux/tmux.conf".source = ./conf/tmux/.tmux.conf;
+    "tmux/.tmux.conf".source = ./conf/tmux/.tmux.conf;
   };
 
   home.activation.copyHyprlandConfig =
