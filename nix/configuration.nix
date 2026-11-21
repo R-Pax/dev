@@ -198,6 +198,7 @@ in {
     wl-clipboard
     pavucontrol
     brightnessctl
+    hyprpaper
     playerctl
   ];
 
