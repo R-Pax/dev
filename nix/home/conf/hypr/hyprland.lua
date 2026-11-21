@@ -2,7 +2,7 @@
 
 local mod = "SUPER"
 
-local terminal = "kitty"  
+local terminal = "ghostty"  
 local menu = "wofi --show drun"
 
 -- Monitors
@@ -125,7 +125,7 @@ hl.bind(mod .. " + SHIFT + L", hl.dsp.focus({ direction = "right" }))
 
 hl.window_rule({
   match = {
-    class = "kitty",
+    class = "com.mitchellh.ghostty",
   },
 
   opacity = "0.9",
