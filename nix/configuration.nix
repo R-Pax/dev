@@ -90,6 +90,7 @@ let
     test -f "$out/lib/firmware/vendor/.vendorfw.manifest"
   '';
   helium = pkgs.callPackage ./applications/helium.nix { };
+  vesktop = pkgs.callPackage ./applications/vesktop.nix { };
 
 in {
   nixpkgs.hostPlatform = "aarch64-linux";
@@ -190,6 +191,7 @@ in {
     zsh
     tmux
     helium
+    vesktop
     fastfetch
     waybar
     wofi
