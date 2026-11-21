@@ -186,7 +186,7 @@ in {
   # Install system applications.
   environment.systemPackages = with pkgs; [
     git
-    kitty
+    ghostty
     neovim
     zsh
     tmux

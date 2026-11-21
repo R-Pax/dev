@@ -3,7 +3,10 @@
 
 {
   xdg.configFile = {
-    "kitty/kitty.conf".source = ./conf/kitty/kitty.conf;
+    "ghostty/config.ghostty" = {
+        source = ./conf/ghostty/config.ghostty; 
+        force = true;
+    };
     "tmux/tmux.conf".source = ./conf/tmux/.tmux.conf;
   };
 
